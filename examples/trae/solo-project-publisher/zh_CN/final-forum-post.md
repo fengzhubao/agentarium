@@ -122,13 +122,13 @@ TRAE SOLO 实际执行时做了这些事：
 
 ## 5、效果展示
 
-这次试跑留下了几张截图，可以作为证据：
+这次试跑已经留下本地截图作为校验，但原图里有可识别的界面信息，所以我没有直接放进公开仓库。正式发帖前我会补一组脱敏截图，重点展示：
 
-- `01-skill-import.png`：TRAE SOLO 已识别并加载 `solo-project-publisher`。
-- `02-generation-process.png`：技能被调用，并按步骤检查目录、读取材料、整理证据。
-- `03-generated-draft.png`：生成了 7 段式论坛草稿。
-- `04-safety-check.png`：读取了安全检查相关材料，并执行发布前检查。
-- `05-directory-structure.png`：Skill 已按 `zh_CN` / `en_US` 双语版本组织。
+- TRAE SOLO 已识别并加载 `solo-project-publisher`。
+- 技能被调用，并按步骤检查目录、读取材料、整理证据。
+- 生成了 7 段式论坛草稿。
+- 读取了安全检查相关材料，并执行发布前检查。
+- Skill 已按 `zh_CN` / `en_US` 双语版本组织。
 
 试跑前：
 
@@ -140,7 +140,7 @@ TRAE SOLO 实际执行时做了这些事：
 
 - 生成了参赛帖草稿。
 - GitHub 仓库已经整理出可公开的 Skill 包。
-- 截图和试跑输出已经放入示例目录。
+- 试跑输出已经放入示例目录，截图会在脱敏后再补。
 - 发布前安全边界更清楚了。
 
 当前公开仓库结构：
@@ -173,7 +173,7 @@ https://github.com/fengzhubao/agentarium/tree/main/skills/trae/solo-project-publ
 
 https://github.com/fengzhubao/agentarium/tree/main/skills/trae/solo-project-publisher/en_US
 
-示例和截图：
+示例和试跑输出：
 
 https://github.com/fengzhubao/agentarium/tree/main/examples/trae/solo-project-publisher/zh_CN
 

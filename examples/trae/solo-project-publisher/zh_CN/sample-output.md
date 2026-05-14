@@ -28,13 +28,11 @@ SOLO Project Publisher 是一个面向开发者的发布整理 Skill。它不是
 ## 5、效果展示
 
 - 使用前：只有比赛链接、规划文档和本地 Skill 草稿。
-- 使用后：生成了 7 段式参赛帖草稿，并保留了截图、试跑输出和安全检查记录。
+- 使用后：生成了 7 段式参赛帖草稿，并保留了试跑输出和安全检查记录；公开截图需要使用脱敏版本。
 - 证据：
-  - `screenshots/01-skill-import.png`
-  - `screenshots/02-generation-process.png`
-  - `screenshots/03-generated-draft.png`
-  - `screenshots/04-safety-check.png`
-  - `screenshots/05-directory-structure.png`
+  - `real-trial-output.md`
+  - `final-forum-post.md`
+  - `[待补：脱敏后的 TRAE SOLO 使用截图]`
 
 ## 6、Skill 链接
 
@@ -50,5 +48,4 @@ SOLO Project Publisher 是一个面向开发者的发布整理 Skill。它不是
 - [x] 未公开 `auth.json`
 - [x] 未输出 Token、私钥或账号
 - [x] 未包含内部主机名
-- [x] 截图仅展示 TRAE SOLO 界面、Skill 结构和生成结果
-
+- [ ] 原始截图包含可识别界面信息，发布前需要替换为脱敏截图

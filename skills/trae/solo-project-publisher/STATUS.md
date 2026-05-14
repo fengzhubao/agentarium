@@ -15,22 +15,16 @@ The Chinese version has been loaded and run once in TRAE SOLO on Windows. The tr
 - Chinese and English sample inputs.
 - Repository-level publishing, importing, safety, completeness, and localization docs.
 - Real TRAE SOLO trial output.
-- Trial screenshots.
+- Real TRAE SOLO trial screenshots were reviewed locally, but are not published here because they include identifiable UI details. Redacted screenshots are still needed.
 - Public GitHub source link.
 
 ## Trial Evidence
 
 - Trial output: `../../../examples/trae/solo-project-publisher/zh_CN/real-trial-output.md`
-- Screenshots: `../../../examples/trae/solo-project-publisher/zh_CN/screenshots/`
+- Redacted screenshots: pending.
 - Final publishable draft: `../../../examples/trae/solo-project-publisher/zh_CN/final-forum-post.md`
 
-Screenshots:
-
-- `01-skill-import.png`: TRAE recognized and loaded `solo-project-publisher`.
-- `02-generation-process.png`: TRAE called the Skill and followed the planned steps.
-- `03-generated-draft.png`: TRAE generated a forum draft using the 7-section structure.
-- `04-safety-check.png`: TRAE read the Skill and evidence checklist and executed the safety step.
-- `05-directory-structure.png`: Skill package contains `zh_CN` and `en_US` versions.
+Local screenshot evidence was used for validation, but the original screenshots are not published in this repository. They showed identifiable TRAE UI details such as user labels and task names. Before public posting, create redacted screenshots that hide personal labels, local paths, project names that should not be public, and any account or machine details.
 
 ## Known Issues From Trial
 
@@ -48,7 +42,7 @@ Screenshots:
 | Sample input | Done |
 | Sample output | Done |
 | Real trial output | Done |
-| Screenshots | Done |
+| Redacted screenshots | Pending |
 | Public safety docs | Done |
 | Public source link | Done |
 | Final forum draft | Done |
@@ -59,4 +53,3 @@ Screenshots:
 - Publish the forum post after final human review.
 - Add the final forum URL after publication.
 - If TRAE Skill marketplace upload becomes available, add the marketplace link.
-

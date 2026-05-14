@@ -8,7 +8,8 @@ The repository is organized by agent/tool family first, then by Skill name, then
 
 | Tool | Skill | Languages | Status | Purpose |
 | --- | --- | --- | --- | --- |
-| TRAE | SOLO Project Publisher | `zh_CN`, `en_US` | Draft | Turn real project evidence into a publishable community post or project report. |
+| TRAE | SOLO Project Publisher | `zh_CN`, `en_US` | Trial validated | Turn real project evidence into a publishable community post or project report. |
+| TRAE | Worktree Conductor | `zh_CN`, `en_US` | Draft | Plan safe parallel development across Git worktrees, branches, file ownership boundaries, and integration order. |
 
 ## Repository Layout
 
@@ -16,14 +17,20 @@ The repository is organized by agent/tool family first, then by Skill name, then
 agentarium/
 ├── skills/
 │   ├── trae/
-│   │   └── solo-project-publisher/
+│   │   ├── solo-project-publisher/
+│   │   │   ├── zh_CN/
+│   │   │   └── en_US/
+│   │   └── worktree-conductor/
 │   │       ├── zh_CN/
 │   │       └── en_US/
 │   ├── claude/
 │   └── codex/
 ├── examples/
 │   ├── trae/
-│   │   └── solo-project-publisher/
+│   │   ├── solo-project-publisher/
+│   │   │   ├── zh_CN/
+│   │   │   └── en_US/
+│   │   └── worktree-conductor/
 │   │       ├── zh_CN/
 │   │       └── en_US/
 │   ├── claude/
@@ -54,6 +61,20 @@ skills/trae/solo-project-publisher/en_US/SKILL.md
 
 The Skill expects a target project, a publishing channel, a public-safety boundary, and any available evidence such as screenshots, command outputs, generated files, or links.
 
+For the Chinese TRAE version of Worktree Conductor:
+
+```text
+skills/trae/worktree-conductor/zh_CN/SKILL.md
+```
+
+For the English TRAE version:
+
+```text
+skills/trae/worktree-conductor/en_US/SKILL.md
+```
+
+The Skill expects a repository, an overall development goal, known modules/shared files, desired parallelism, and validation commands.
+
 For importing details, see `docs/importing.md`.
 
 For Skill-specific status and notes, see:
@@ -61,6 +82,8 @@ For Skill-specific status and notes, see:
 ```text
 skills/trae/solo-project-publisher/README.md
 skills/trae/solo-project-publisher/STATUS.md
+skills/trae/worktree-conductor/README.md
+skills/trae/worktree-conductor/STATUS.md
 ```
 
 Before calling a Skill complete, check `docs/skill-completeness.md`.
