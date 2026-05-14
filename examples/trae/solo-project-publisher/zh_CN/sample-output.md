@@ -1,60 +1,54 @@
 # SOLO Project Publisher 示例输出
 
-说明：这是脱敏示例输出，用于展示 Skill 的目标产物形态。真实投稿前应替换为 TRAE SOLO 试跑后的实际输出、截图和链接。
+说明：这是脱敏示例输出，用于展示 Skill 的目标产物形态。真实试跑输出见 `real-trial-output.md`，整理后的发布稿见 `final-forum-post.md`。
 
 ```markdown
-# 〖Skill 创作〗SOLO Project Publisher：把真实仓库工作流整理成可发布的社区案例
+# 〖Skill 创作〗SOLO Project Publisher：把真实项目过程整理成能发布的社区帖
 
 ## 1、Skill简介
 
-SOLO Project Publisher 是一个面向开发者的发布助手。它会从真实项目目录、规划文档、命令输出、截图和生成物中整理证据，生成一篇可发布、可复查、可讨论的社区帖子。
+SOLO Project Publisher 是一个面向开发者的发布整理 Skill。它不是单纯润色文字，而是把项目目录、规划文档、截图、命令结果和链接整理成一篇能公开发布、能复查的帖子。
 
 ## 2、使用场景
 
-开发者完成一个功能、工具或比赛作品后，常常需要把背景、过程、结果、截图和链接整理成论坛帖。材料通常散落在仓库、终端输出、文档和截图里，容易漏证据，也容易不小心泄露敏感信息。
+我做这个 Skill 的直接原因，是参加 TRAE SOLO 技能创作赛时发现：真正麻烦的不是写几段介绍，而是把“为什么做、怎么做、做出了什么、证据在哪里、哪些不能公开”一次性整理清楚。
 
 ## 3、创作过程
 
-这个 Skill 把发布过程拆成五步：界定范围、检查材料、整理证据、起草内容、发布前复查。创作时重点约束了两件事：一是每个关键结论都要尽量有证据，二是公开发布前必须做敏感信息检查。
+这个 Skill 把发布过程拆成五步：界定范围、检查材料、整理证据、起草内容、发布前复查。第一轮试跑中，TRAE SOLO 读取了规划文档和 Skill 草稿，并生成了参赛帖草稿。
 
 ## 4、使用步骤
 
-1. 提供目标项目目录和发布分类。
-2. 说明哪些内容可以公开，哪些必须排除。
-3. 让 TRAE SOLO 根据 Skill 读取公开材料并整理帖子。
-4. 检查 Skill 输出的待补材料清单。
-5. 补截图、源码链接和发布安全检查后发帖。
+1. 导入 `skills/trae/solo-project-publisher/zh_CN`。
+2. 指定项目目录和发帖分类。
+3. 明确哪些内容可以公开。
+4. 让 Skill 读取规划材料并起草帖子。
+5. 人工补充截图、源码链接和最终检查。
 
 ## 5、效果展示
 
-- 使用前：只有零散的比赛链接、规划文档和本地 Skill 草稿。
-- 使用后：生成了参赛帖草稿、待补材料清单和发布前安全检查。
+- 使用前：只有比赛链接、规划文档和本地 Skill 草稿。
+- 使用后：生成了 7 段式参赛帖草稿，并保留了截图、试跑输出和安全检查记录。
 - 证据：
-  - [待补：TRAE SOLO 使用截图]
-  - [待补：使用前后目录对比]
-  - [待补：Skill 源码链接]
+  - `screenshots/01-skill-import.png`
+  - `screenshots/02-generation-process.png`
+  - `screenshots/03-generated-draft.png`
+  - `screenshots/04-safety-check.png`
+  - `screenshots/05-directory-structure.png`
 
 ## 6、Skill 链接
 
-- 源码：[待补：公开仓库链接]
-- Skill 市场：[待补：如有]
+- 源码：https://github.com/fengzhubao/agentarium/tree/main/skills/trae/solo-project-publisher/zh_CN
 
 ## 7、总结与思考
 
-这个 Skill 最有价值的地方不是“帮我润色”，而是把项目发布变成一个证据驱动的流程。后续还可以继续补充更多发布模式，例如 Release 说明、工程复盘、测评帖和多语言版本。
+这次试跑说明这个 Skill 能把“发帖”变成一个相对稳定的流程。后续还可以继续扩展 Release 说明、工程复盘、测评帖和多语言发布场景。
 ```
-
-## 待补材料清单
-
-- [ ] TRAE SOLO 使用截图
-- [ ] 使用前后目录对比
-- [ ] 公开源码链接
-- [ ] Skill 市场链接，如有
 
 ## 发布前安全检查
 
-- [x] 未读取 `auth.json`
+- [x] 未公开 `auth.json`
 - [x] 未输出 Token、私钥或账号
 - [x] 未包含内部主机名
-- [ ] 真实截图发布前还需人工复查
+- [x] 截图仅展示 TRAE SOLO 界面、Skill 结构和生成结果
 
