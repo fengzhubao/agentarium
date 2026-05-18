@@ -12,6 +12,30 @@ authoritative; this file only points to them and defines scan boundaries.
 - vcs: git
 - default_branch: main
 
+## Workspace Profiles
+
+Use `workspace_path` with any selected `roots` entry to reconstruct a local
+checkout path. `roots` is intentionally a list so one platform can carry several
+candidate workspace roots.
+
+- workspace_path: `fengzhubao/agentarium`
+- root_selection: choose the profile matching the current OS/runtime, then use
+  an existing root from `roots`; prefer the current working tree when multiple
+  roots match.
+- profiles:
+  - id: wsl-debian-13
+    os: linux
+    runtime: wsl2
+    distro: debian-13
+    roots:
+      - `~/workspace/lup`
+  - id: windows
+    os: windows
+    runtime: native
+    path_style: msys
+    roots:
+      - `/d/Projects/LuppiterProjects`
+
 ## Source Of Truth
 
 - repository_overview: README.md
@@ -63,6 +87,11 @@ implementation details that do not affect repository navigation.
 
 ## Local Rules
 
-- Write local workspace paths as `~/workspace/lup/...`, not `/home/<user>/...`.
+- Use `<workspace-root>/...` for shared local paths unless a
+  profile-specific example is required.
+- Do not record concrete user-home paths such as `/home/<user>/...` or
+  `C:/Users/<user>/...`.
+- Add new machine roots under `Workspace Profiles` as `roots` list entries;
+  keep them user-neutral.
 - `.hug/project.md` is intended to be committed.
 - `.hug/local/` is private local state and must stay ignored.
