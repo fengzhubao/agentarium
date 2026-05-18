@@ -14,27 +14,37 @@ authoritative; this file only points to them and defines scan boundaries.
 
 ## Workspace Profiles
 
-Use `workspace_path` with any selected `roots` entry to reconstruct a local
-checkout path. `roots` is intentionally a list so one platform can carry several
-candidate workspace roots.
+The fenced YAML block is the machine-readable source for local checkout
+resolution. Keep paths user-neutral.
 
-- workspace_path: `fengzhubao/agentarium`
-- root_selection: choose the profile matching the current OS/runtime, then use
-  an existing root from `roots`; prefer the current working tree when multiple
-  roots match.
-- profiles:
-  - id: wsl-debian-13
-    os: linux
-    runtime: wsl2
-    distro: debian-13
-    roots:
-      - `~/workspace/lup`
-  - id: windows
-    os: windows
-    runtime: native
-    path_style: msys
-    roots:
-      - `/d/Projects/LuppiterProjects`
+```yaml
+workspace:
+  schema: "hug.workspace.v1"
+  workspace_paths:
+    - "fengzhubao/agentarium"
+  root_selection:
+    - "Match the profile to the current OS/runtime."
+    - "Use an existing root from roots."
+    - "Prefer the current worktree when multiple roots match."
+  profiles:
+    - id: "wsl-debian"
+      os: "linux"
+      runtime: "wsl2"
+      distro: "debian"
+      observed_versions:
+        - "13"
+      roots:
+        - path: "~/workspace/lup"
+          style: "posix"
+    - id: "windows"
+      os: "windows"
+      runtime: "native"
+      roots:
+        - path: "/d/Projects/LuppiterProjects"
+          style: "msys"
+        - path: "D:/Projects/LuppiterProjects"
+          style: "win32"
+```
 
 ## Source Of Truth
 
@@ -91,7 +101,7 @@ implementation details that do not affect repository navigation.
   profile-specific example is required.
 - Do not record concrete user-home paths such as `/home/<user>/...` or
   `C:/Users/<user>/...`.
-- Add new machine roots under `Workspace Profiles` as `roots` list entries;
-  keep them user-neutral.
+- Add new machine roots under `workspace.profiles[].roots`; keep them
+  user-neutral.
 - `.hug/project.md` is intended to be committed.
 - `.hug/local/` is private local state and must stay ignored.
