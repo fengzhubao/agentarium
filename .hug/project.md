@@ -15,35 +15,24 @@ authoritative; this file only points to them and defines scan boundaries.
 ## Workspace Profiles
 
 The fenced YAML block is the machine-readable source for local checkout
-resolution. Keep paths user-neutral.
+resolution. It records repository-relative workspace paths and references the
+workspace-level root set maintained by `hug_scripts`.
 
 ```yaml
 workspace:
-  schema: "hug.workspace.v1"
+  schema: "hug.workspace.v2"
   workspace_paths:
     - "fengzhubao/agentarium"
+  root_sets:
+    - "luppiter-projects"
+  root_sources:
+    - "<workspace-root>/hug_scripts/project-tools/workspace-roots.md"
+    - ".hug/local/workspace-roots.yaml"
   root_selection:
-    - "Match the profile to the current OS/runtime."
+    - "If running inside this checkout, derive <workspace-root> by removing a matching workspace_paths suffix from the current path."
+    - "Otherwise read root_sources and choose a profile matching the current OS/runtime."
     - "Use an existing root from roots."
     - "Prefer the current worktree when multiple roots match."
-  profiles:
-    - id: "wsl-debian"
-      os: "linux"
-      runtime: "wsl2"
-      distro: "debian"
-      observed_versions:
-        - "13"
-      roots:
-        - path: "~/workspace/lup"
-          style: "posix"
-    - id: "windows"
-      os: "windows"
-      runtime: "native"
-      roots:
-        - path: "/d/Projects/LuppiterProjects"
-          style: "msys"
-        - path: "D:/Projects/LuppiterProjects"
-          style: "win32"
 ```
 
 ## Source Of Truth
@@ -101,7 +90,8 @@ implementation details that do not affect repository navigation.
   profile-specific example is required.
 - Do not record concrete user-home paths such as `/home/<user>/...` or
   `C:/Users/<user>/...`.
-- Add new machine roots under `workspace.profiles[].roots`; keep them
-  user-neutral.
+- Add shared machine roots to the workspace root set in
+  `hug_scripts/project-tools/workspace-roots.md`; use `.hug/local/` only for
+  private machine-local overrides.
 - `.hug/project.md` is intended to be committed.
 - `.hug/local/` is private local state and must stay ignored.
