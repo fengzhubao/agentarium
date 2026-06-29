@@ -8,7 +8,7 @@ It is designed for contest submissions, project write-ups, release notes, and te
 
 | Locale | Path | Status |
 | --- | --- | --- |
-| Simplified Chinese | `zh_CN/` | Draft |
+| Simplified Chinese | `zh_CN/` | Trial validated |
 | English | `en_US/` | Draft |
 
 ## What It Produces
@@ -39,10 +39,12 @@ skills/trae/solo-project-publisher/en_US/SKILL.md
 - The Skill does not upload posts by itself.
 - The Skill does not create screenshots or public links by itself.
 - The Skill should not read or expose credentials, tokens, private keys, private repositories, or sensitive local config.
-- Example output is illustrative until a real TRAE SOLO trial is captured.
+- The Chinese version has a captured TRAE SOLO trial. The English version is still draft.
 
 ## Related Examples
 
 - Chinese sample input: `../../../examples/trae/solo-project-publisher/zh_CN/sample-input.md`
 - English sample input: `../../../examples/trae/solo-project-publisher/en_US/sample-input.md`
+- Chinese real trial output: `../../../examples/trae/solo-project-publisher/zh_CN/real-trial-output.md`
+- Chinese final forum draft: `../../../examples/trae/solo-project-publisher/zh_CN/final-forum-post.md`
 
