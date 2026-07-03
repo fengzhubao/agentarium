@@ -1,0 +1,194 @@
+schema_version: 2
+id_policy:
+  pattern: "^SKL-[0-9]{4}$"
+  scope: "Global stable Skill IDs. Tool families are recorded separately."
+  allocation: "Use the next unused numeric ID. Do not encode tool family names in IDs."
+status_policy: catalog/status-policy.md
+required_locales:
+  - zh_CN
+  - en_US
+tool_families:
+  - trae
+  - claude
+  - codex
+skills:
+  - id: SKL-0001
+    slug: solo-project-publisher
+    title: SOLO Project Publisher
+    category: publishing
+    scope: shared
+    status: draft
+    status_note: "zh_CN is trial-validated; en_US is draft. Overall status is conservative across required locales."
+    summary_zh: "将真实项目证据整理成社区帖、比赛投稿或项目报告。"
+    summary_en: "Turns real project evidence into a publishable community post or project report."
+    supported_tools:
+      - trae
+    target_tools:
+      - trae
+    required_locales:
+      - zh_CN
+      - en_US
+    variants:
+      - tool: trae
+        status: draft
+        status_note: "zh_CN is trial-validated; en_US is draft."
+        package_root: skills/trae/solo-project-publisher
+        readme_file: skills/trae/solo-project-publisher/README.md
+        status_file: skills/trae/solo-project-publisher/STATUS.md
+        examples_root: examples/trae/solo-project-publisher
+        locale_roots:
+          zh_CN:
+            status: trial-validated
+            import_root: skills/trae/solo-project-publisher/zh_CN
+            skill_file: skills/trae/solo-project-publisher/zh_CN/SKILL.md
+            examples_root: examples/trae/solo-project-publisher/zh_CN
+            evidence:
+              sample_input: examples/trae/solo-project-publisher/zh_CN/sample-input.md
+              sample_output: examples/trae/solo-project-publisher/zh_CN/sample-output.md
+              trial_output: examples/trae/solo-project-publisher/zh_CN/real-trial-output.md
+              final_post: examples/trae/solo-project-publisher/zh_CN/final-forum-post.md
+              trial_note: skills/trae/solo-project-publisher/STATUS.md
+          en_US:
+            status: draft
+            import_root: skills/trae/solo-project-publisher/en_US
+            skill_file: skills/trae/solo-project-publisher/en_US/SKILL.md
+            examples_root: examples/trae/solo-project-publisher/en_US
+            evidence:
+              sample_input: examples/trae/solo-project-publisher/en_US/sample-input.md
+              sample_output: examples/trae/solo-project-publisher/en_US/sample-output.md
+    tags:
+      - publishing
+      - evidence
+      - public-safety
+
+  - id: SKL-0002
+    slug: worktree-conductor
+    title: Worktree Conductor
+    category: development
+    scope: shared
+    status: draft
+    summary_zh: "规划多 agent 或多人协作下的 Git worktree 并行开发。"
+    summary_en: "Plans safe parallel development across Git worktrees, branches, and agents."
+    supported_tools:
+      - trae
+    target_tools:
+      - trae
+    required_locales:
+      - zh_CN
+      - en_US
+    variants:
+      - tool: trae
+        status: draft
+        package_root: skills/trae/worktree-conductor
+        readme_file: skills/trae/worktree-conductor/README.md
+        status_file: skills/trae/worktree-conductor/STATUS.md
+        examples_root: examples/trae/worktree-conductor
+        locale_roots:
+          zh_CN:
+            status: draft
+            import_root: skills/trae/worktree-conductor/zh_CN
+            skill_file: skills/trae/worktree-conductor/zh_CN/SKILL.md
+            examples_root: examples/trae/worktree-conductor/zh_CN
+            evidence:
+              sample_input: examples/trae/worktree-conductor/zh_CN/sample-input.md
+              sample_output: examples/trae/worktree-conductor/zh_CN/sample-output.md
+          en_US:
+            status: draft
+            import_root: skills/trae/worktree-conductor/en_US
+            skill_file: skills/trae/worktree-conductor/en_US/SKILL.md
+            examples_root: examples/trae/worktree-conductor/en_US
+            evidence:
+              sample_input: examples/trae/worktree-conductor/en_US/sample-input.md
+              sample_output: examples/trae/worktree-conductor/en_US/sample-output.md
+    tags:
+      - git
+      - worktree
+      - multi-agent
+
+  - id: SKL-0003
+    slug: skill-quality-auditor
+    title: Skill Quality Auditor
+    category: quality
+    scope: shared
+    status: candidate
+    summary_zh: "审计 Skill 包的结构、触发描述、双语一致性、示例、断链和公开安全风险。"
+    summary_en: "Audits Skill package structure, trigger descriptions, locale parity, examples, broken links, and public-safety risks."
+    supported_tools: []
+    target_tools:
+      - trae
+      - codex
+      - claude
+    required_locales:
+      - zh_CN
+      - en_US
+    variants: []
+    tags:
+      - quality
+      - validation
+      - public-safety
+
+  - id: SKL-0004
+    slug: agent-context-sync
+    title: Agent Context Sync
+    category: context
+    scope: shared
+    status: candidate
+    summary_zh: "同步 AGENTS.md、CLAUDE.md、Codex instructions、Cursor rules 等跨 agent 上下文。"
+    summary_en: "Keeps AGENTS.md, CLAUDE.md, Codex instructions, Cursor rules, and other agent context files aligned."
+    supported_tools: []
+    target_tools:
+      - trae
+      - codex
+      - claude
+    required_locales:
+      - zh_CN
+      - en_US
+    variants: []
+    tags:
+      - context
+      - instructions
+      - multi-agent
+
+  - id: SKL-0005
+    slug: ci-failure-triage
+    title: CI Failure Triage
+    category: ci
+    scope: shared
+    status: candidate
+    summary_zh: "分析 CI 日志，定位失败根因，并输出最小修复计划。"
+    summary_en: "Analyzes CI logs, identifies failure causes, and produces minimal fix plans."
+    supported_tools: []
+    target_tools:
+      - trae
+      - codex
+      - claude
+    required_locales:
+      - zh_CN
+      - en_US
+    variants: []
+    tags:
+      - ci
+      - github-actions
+      - debugging
+
+  - id: SKL-0006
+    slug: mcp-risk-review
+    title: MCP Risk Review
+    category: security
+    scope: shared
+    status: candidate
+    summary_zh: "接入 MCP server 前审查权限、数据暴露、危险工具调用和 prompt injection 风险。"
+    summary_en: "Reviews MCP server permissions, data exposure, dangerous tool calls, and prompt injection risks before adoption."
+    supported_tools: []
+    target_tools:
+      - trae
+      - codex
+      - claude
+    required_locales:
+      - zh_CN
+      - en_US
+    variants: []
+    tags:
+      - mcp
+      - security
+      - risk-review

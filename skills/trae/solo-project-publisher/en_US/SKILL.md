@@ -90,7 +90,7 @@ If evidence is missing, do not invent it. Mark it clearly as `[TODO]`.
 
 - Do not read `auth.json`, `.env`, private keys, tokens, cookies, or password files.
 - Do not expose internal hostnames, private repository URLs, customer names, real accounts, or machine fingerprints.
-- Keep local absolute paths only when necessary, and prefer relative paths.
+- For public output, use relative paths or redacted placeholders by default. Keep local absolute paths only for non-public internal reports with a clear reason.
 - For public community output, always include a pre-publish safety check.
 
 ## Output Shape

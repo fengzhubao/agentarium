@@ -2,6 +2,8 @@
 
 Agentarium publishes Skills by tool family and language.
 
+This policy applies to Skill instructions, examples, catalog language metadata, and docs that describe language requirements.
+
 ## Directory Rule
 
 Use this structure:
@@ -22,7 +24,7 @@ examples/trae/solo-project-publisher/en_US/
 
 ## Required Languages
 
-Every public Skill should include at least:
+Every implemented public Skill must include at least:
 
 - `zh_CN`: Simplified Chinese
 - `en_US`: English
@@ -34,12 +36,17 @@ Additional languages can be added later, for example:
 - `fr_FR`
 - `de_DE`
 
+This requirement is also enforced at the repository-instruction level in `AGENTS.md` and tracked in `catalog/skills.yaml`. Candidate Skills may be registered before these packages exist.
+
 ## Consistency Rules
 
 - Keep the same Skill name across locales unless the target tool requires otherwise.
 - Keep behavior equivalent across languages.
 - Locale-specific examples may differ, but the safety boundaries and output requirements should remain aligned.
+- Before changing either `zh_CN` or `en_US`, read both locale `SKILL.md` files and their linked references or examples.
 - When updating one locale, check whether the other locales need the same update.
+- When adding a Skill to `catalog/skills.yaml`, list `zh_CN` and `en_US` under `required_locales`.
+- Locale exceptions must follow `catalog/status-policy.md`; do not introduce undefined statuses.
 - Avoid hard-coding one locale's output format as the default in another locale. If a Chinese contest requires Chinese headings, label that section as a Chinese-channel template inside the English version.
 
 ## Link Rule

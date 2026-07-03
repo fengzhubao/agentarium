@@ -13,6 +13,8 @@ This repository is public. Treat every committed file as externally visible.
 - Large raw logs with machine, account, or environment details
 - Unnecessary local absolute paths
 
+For public examples, posts, screenshots, and reports, use relative paths or redacted placeholders by default. Keep absolute local paths only for non-public internal reports when there is a clear reason.
+
 ## Allowed Content
 
 - Skill instructions
