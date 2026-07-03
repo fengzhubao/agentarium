@@ -22,7 +22,6 @@ workspace-level root set maintained by `hug_scripts`.
 workspace:
   schema: "hug.workspace.v2"
   workspace_paths:
-    - "agentarium"
     - "fengzhubao/agentarium"
   root_sets:
     - "luppiter-projects"
