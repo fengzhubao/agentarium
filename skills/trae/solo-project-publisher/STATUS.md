@@ -2,7 +2,7 @@
 
 ## Current Stage
 
-Trial validated.
+Draft overall; zh_CN trial-validated; en_US draft.
 
 The Chinese version has been loaded and run once in TRAE SOLO on Windows. The trial proved that TRAE can recognize the Skill, read the referenced planning files, and produce a contest-post draft with the expected 7-section structure.
 

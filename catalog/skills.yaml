@@ -8,6 +8,7 @@ required_locales:
   - zh_CN
   - en_US
 tool_families:
+  - shared
   - trae
   - claude
   - codex
@@ -21,6 +22,13 @@ skills:
     status_note: "zh_CN is trial-validated; en_US is draft. Overall status is conservative across required locales."
     summary_zh: "将真实项目证据整理成社区帖、比赛投稿或项目报告。"
     summary_en: "Turns real project evidence into a publishable community post or project report."
+    model_fit:
+      suitable_for:
+        - "Agents that can load a local SKILL.md package and read user-provided repository files, notes, screenshots, or command outputs."
+        - "Models with strong summarization, public-writing, evidence synthesis, and safety-review ability."
+      not_suitable_for:
+        - "Chat-only models without file or evidence access when the user expects evidence-backed claims."
+        - "Agents that cannot keep private paths, credentials, screenshots, and account details out of public drafts."
     supported_tools:
       - trae
     target_tools:
@@ -66,40 +74,51 @@ skills:
     title: Worktree Conductor
     category: development
     scope: shared
-    status: draft
+    status: sampled
+    status_note: "Bilingual public-safe sample inputs and outputs exist for the shared package; real target-agent trial evidence is pending."
     summary_zh: "规划多 agent 或多人协作下的 Git worktree 并行开发。"
     summary_en: "Plans safe parallel development across Git worktrees, branches, and agents."
+    model_fit:
+      suitable_for:
+        - "Code-capable agents that can inspect repository structure, reason about Git branches/worktrees, and produce safe task handoff prompts."
+        - "Models with reliable multi-step planning, conflict-risk analysis, and command-safety judgment."
+      not_suitable_for:
+        - "Chat-only models without repository context for real worktree planning."
+        - "Agents that cannot distinguish safe planning from directly running destructive Git commands."
     supported_tools:
-      - trae
+      - shared
     target_tools:
       - trae
+      - codex
+      - claude
     required_locales:
       - zh_CN
       - en_US
     variants:
-      - tool: trae
-        status: draft
-        package_root: skills/trae/worktree-conductor
-        readme_file: skills/trae/worktree-conductor/README.md
-        status_file: skills/trae/worktree-conductor/STATUS.md
-        examples_root: examples/trae/worktree-conductor
+      - tool: shared
+        status: sampled
+        status_note: "Bilingual samples, workflow templates, and command-safety checks exist; real target-agent trial evidence is pending."
+        package_root: skills/shared/worktree-conductor
+        readme_file: skills/shared/worktree-conductor/README.md
+        status_file: skills/shared/worktree-conductor/STATUS.md
+        examples_root: examples/shared/worktree-conductor
         locale_roots:
           zh_CN:
-            status: draft
-            import_root: skills/trae/worktree-conductor/zh_CN
-            skill_file: skills/trae/worktree-conductor/zh_CN/SKILL.md
-            examples_root: examples/trae/worktree-conductor/zh_CN
+            status: sampled
+            import_root: skills/shared/worktree-conductor/zh_CN
+            skill_file: skills/shared/worktree-conductor/zh_CN/SKILL.md
+            examples_root: examples/shared/worktree-conductor/zh_CN
             evidence:
-              sample_input: examples/trae/worktree-conductor/zh_CN/sample-input.md
-              sample_output: examples/trae/worktree-conductor/zh_CN/sample-output.md
+              sample_input: examples/shared/worktree-conductor/zh_CN/sample-input.md
+              sample_output: examples/shared/worktree-conductor/zh_CN/sample-output.md
           en_US:
-            status: draft
-            import_root: skills/trae/worktree-conductor/en_US
-            skill_file: skills/trae/worktree-conductor/en_US/SKILL.md
-            examples_root: examples/trae/worktree-conductor/en_US
+            status: sampled
+            import_root: skills/shared/worktree-conductor/en_US
+            skill_file: skills/shared/worktree-conductor/en_US/SKILL.md
+            examples_root: examples/shared/worktree-conductor/en_US
             evidence:
-              sample_input: examples/trae/worktree-conductor/en_US/sample-input.md
-              sample_output: examples/trae/worktree-conductor/en_US/sample-output.md
+              sample_input: examples/shared/worktree-conductor/en_US/sample-input.md
+              sample_output: examples/shared/worktree-conductor/en_US/sample-output.md
     tags:
       - git
       - worktree
@@ -110,10 +129,19 @@ skills:
     title: Skill Quality Auditor
     category: quality
     scope: shared
-    status: candidate
+    status: sampled
+    status_note: "Current shared package has bilingual public-safe sample inputs and outputs; target-agent trial evidence is pending."
     summary_zh: "审计 Skill 包的结构、触发描述、双语一致性、示例、断链和公开安全风险。"
     summary_en: "Audits Skill package structure, trigger descriptions, locale parity, examples, broken links, and public-safety risks."
-    supported_tools: []
+    model_fit:
+      suitable_for:
+        - "Agents that can read repository files, compare catalog metadata with package files, and report findings without editing by default."
+        - "Models with structured review, link/path checking, bilingual parity judgment, and public-safety risk analysis."
+      not_suitable_for:
+        - "Models without file access when the audit requires checking real paths, references, or examples."
+        - "Agents that cannot separate read-only findings from requested fixes."
+    supported_tools:
+      - shared
     target_tools:
       - trae
       - codex
@@ -121,7 +149,31 @@ skills:
     required_locales:
       - zh_CN
       - en_US
-    variants: []
+    variants:
+      - tool: shared
+        status: sampled
+        status_note: "Bilingual audit workflow, references, and samples exist; real target-agent trial evidence is pending."
+        package_root: skills/shared/skill-quality-auditor
+        readme_file: skills/shared/skill-quality-auditor/README.md
+        status_file: skills/shared/skill-quality-auditor/STATUS.md
+        examples_root: examples/shared/skill-quality-auditor
+        locale_roots:
+          zh_CN:
+            status: sampled
+            import_root: skills/shared/skill-quality-auditor/zh_CN
+            skill_file: skills/shared/skill-quality-auditor/zh_CN/SKILL.md
+            examples_root: examples/shared/skill-quality-auditor/zh_CN
+            evidence:
+              sample_input: examples/shared/skill-quality-auditor/zh_CN/sample-input.md
+              sample_output: examples/shared/skill-quality-auditor/zh_CN/sample-output.md
+          en_US:
+            status: sampled
+            import_root: skills/shared/skill-quality-auditor/en_US
+            skill_file: skills/shared/skill-quality-auditor/en_US/SKILL.md
+            examples_root: examples/shared/skill-quality-auditor/en_US
+            evidence:
+              sample_input: examples/shared/skill-quality-auditor/en_US/sample-input.md
+              sample_output: examples/shared/skill-quality-auditor/en_US/sample-output.md
     tags:
       - quality
       - validation
@@ -135,6 +187,12 @@ skills:
     status: candidate
     summary_zh: "同步 AGENTS.md、CLAUDE.md、Codex instructions、Cursor rules 等跨 agent 上下文。"
     summary_en: "Keeps AGENTS.md, CLAUDE.md, Codex instructions, Cursor rules, and other agent context files aligned."
+    model_fit:
+      suitable_for:
+        - "Agents that can read and edit multiple instruction files while preserving tool-specific constraints."
+        - "Models with long-context comparison and policy-consistency judgment."
+      not_suitable_for:
+        - "Models that cannot inspect the actual instruction files being synchronized."
     supported_tools: []
     target_tools:
       - trae
@@ -157,6 +215,12 @@ skills:
     status: candidate
     summary_zh: "分析 CI 日志，定位失败根因，并输出最小修复计划。"
     summary_en: "Analyzes CI logs, identifies failure causes, and produces minimal fix plans."
+    model_fit:
+      suitable_for:
+        - "Code-capable agents that can read CI logs, inspect related source/tests, and separate root cause from symptoms."
+        - "Models with debugging discipline, command-output analysis, and patch-planning ability."
+      not_suitable_for:
+        - "Models that only summarize logs without repository or test context."
     supported_tools: []
     target_tools:
       - trae
@@ -179,6 +243,12 @@ skills:
     status: candidate
     summary_zh: "接入 MCP server 前审查权限、数据暴露、危险工具调用和 prompt injection 风险。"
     summary_en: "Reviews MCP server permissions, data exposure, dangerous tool calls, and prompt injection risks before adoption."
+    model_fit:
+      suitable_for:
+        - "Agents that can inspect MCP server manifests, tool descriptions, permission scopes, and data-flow notes."
+        - "Models with security review, threat modeling, and prompt-injection risk analysis."
+      not_suitable_for:
+        - "Models without access to the MCP tool metadata or deployment context being reviewed."
     supported_tools: []
     target_tools:
       - trae

@@ -4,6 +4,8 @@
 
 Agentarium is a public repository of reusable agent workflows and Skills. Treat every committed file as public-facing.
 
+Default to shared, tool-agnostic workflows when the behavior can apply across agent tools. Use `skills/shared/` for canonical packages that are not tied to one agent tool. Tool-family directories such as `skills/trae/`, `skills/codex/`, and `skills/claude/` are tool-specific import variants. TRAE SOLO is the origin context for the first published Skill, not the default direction for unrelated Skills.
+
 ## Read Order
 
 When working in this repository, read these files before changing Skills, examples, catalog entries, or repository docs:
@@ -23,12 +25,13 @@ When working in this repository, read these files before changing Skills, exampl
 Use this structure:
 
 ```text
-skills/<tool>/<skill-name>/<locale>/
-examples/<tool>/<skill-name>/<locale>/
+skills/<package-family>/<skill-name>/<locale>/
+examples/<package-family>/<skill-name>/<locale>/
 ```
 
-Supported tool family names are currently:
+Supported package family names are currently:
 
+- `shared`
 - `trae`
 - `claude`
 - `codex`
@@ -40,7 +43,7 @@ Supported tool family names are currently:
 - When updating one locale, read the other locale before deciding whether it needs the same behavior update.
 - Keep `SKILL.md` frontmatter limited to `name` and `description`.
 - Put detailed templates, checklists, or long references in `references/`, not directly in `SKILL.md`.
-- Add redacted examples under `examples/<tool>/<skill-name>/<locale>/`.
+- Add redacted examples under `examples/<package-family>/<skill-name>/<locale>/`.
 - Keep `README.md` and `STATUS.md` at the Skill root when a Skill has multiple locales.
 - Each locale directory must remain independently importable and contain every required runtime reference.
 
@@ -50,6 +53,10 @@ Supported tool family names are currently:
 - Use global stable IDs such as `SKL-0001`; do not encode the tool family in the ID.
 - Use `scope: shared` for workflows that can apply across tools.
 - Use `scope: tool-specific` for workflows tied to one agent tool or platform.
+- `scope` describes workflow portability; `supported_tools` describes implemented package families.
+- For shared Skills, keep the core workflow tool-neutral and isolate tool-specific commands, UI assumptions, screenshots, marketplace links, or import steps inside the matching variant directory.
+- `target_tools` may list planned tools before those variants exist. Do not treat missing planned variants as evidence against the implemented variant's current status.
+- Record agent/model fit as capability requirements, not as promises tied to one changing model brand or version. Prefer wording such as file access, repository inspection, tool use, long-context reasoning, code reasoning, safety review, or writing quality.
 - Keep catalog status aligned with or more conservative than each Skill's `STATUS.md`.
 - Record importable locale roots under `variants[].locale_roots.<locale>.import_root`.
 - If a Skill is only a candidate, leave implementation variants empty, record intended `target_tools`, and mark `status: candidate`.

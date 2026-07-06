@@ -18,6 +18,13 @@ It is designed for contest submissions, project write-ups, release notes, and te
 - A public-safety checklist.
 - Suggested next improvements.
 
+## Agent / Model Fit
+
+- Current implemented variant: TRAE package under `skills/trae/solo-project-publisher/`.
+- Suitable for agents that can read local project files, user-provided evidence, screenshots, command outputs, and notes.
+- Best with models that are strong at summarization, public writing, evidence synthesis, and public-safety review.
+- Not suitable for chat-only models without evidence access when the user expects claims to be backed by real files or artifacts.
+
 ## Use The Chinese Version
 
 Use this for the TRAE Chinese community and the SOLO Skill contest:

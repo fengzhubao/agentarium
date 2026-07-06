@@ -1,6 +1,8 @@
 # Localization Policy
 
-Agentarium publishes Skills by tool family and language.
+Agentarium publishes Skills by package family and language.
+
+Language localization is separate from package-family placement. A shared Skill should keep behavior aligned across locales and, where possible, across future tool-specific variants. Skill packages under `skills/shared/...` and examples under `examples/shared/...` are canonical tool-agnostic package examples.
 
 This policy applies to Skill instructions, examples, catalog language metadata, and docs that describe language requirements.
 
@@ -9,17 +11,17 @@ This policy applies to Skill instructions, examples, catalog language metadata, 
 Use this structure:
 
 ```text
-skills/<tool>/<skill-name>/<locale>/
-examples/<tool>/<skill-name>/<locale>/
+skills/<package-family>/<skill-name>/<locale>/
+examples/<package-family>/<skill-name>/<locale>/
 ```
 
 Examples:
 
 ```text
-skills/trae/solo-project-publisher/zh_CN/
-skills/trae/solo-project-publisher/en_US/
-examples/trae/solo-project-publisher/zh_CN/
-examples/trae/solo-project-publisher/en_US/
+skills/shared/<skill-name>/zh_CN/
+skills/shared/<skill-name>/en_US/
+examples/shared/<skill-name>/zh_CN/
+examples/shared/<skill-name>/en_US/
 ```
 
 ## Required Languages
@@ -43,6 +45,7 @@ This requirement is also enforced at the repository-instruction level in `AGENTS
 - Keep the same Skill name across locales unless the target tool requires otherwise.
 - Keep behavior equivalent across languages.
 - Locale-specific examples may differ, but the safety boundaries and output requirements should remain aligned.
+- Agent/model fit should remain behaviorally aligned across locales. Do not describe a Skill as suitable for stronger or broader model capabilities in one locale unless the difference is intentional and documented.
 - Before changing either `zh_CN` or `en_US`, read both locale `SKILL.md` files and their linked references or examples.
 - When updating one locale, check whether the other locales need the same update.
 - When adding a Skill to `catalog/skills.yaml`, list `zh_CN` and `en_US` under `required_locales`.
@@ -51,7 +54,13 @@ This requirement is also enforced at the repository-instruction level in `AGENTS
 
 ## Link Rule
 
-When linking a Skill from a community post, link to the locale-specific directory:
+When linking a Skill from a community post, link to the locale-specific directory. Shared package example:
+
+```text
+https://github.com/fengzhubao/agentarium/tree/main/skills/shared/worktree-conductor/zh_CN
+```
+
+Current TRAE package example:
 
 ```text
 https://github.com/fengzhubao/agentarium/tree/main/skills/trae/solo-project-publisher/zh_CN
