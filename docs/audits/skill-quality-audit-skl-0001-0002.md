@@ -50,7 +50,7 @@ Both Skills satisfy the repository's implemented Skill structure: bilingual `SKI
 | Locale parity | pass with warning | Core workflow, evidence rules, and safety boundaries align. Reference templates differ slightly in emphasis. |
 | References and links | pass | `SKILL.md` runtime references resolve. Catalog evidence paths exist. |
 | Evidence gates | pass with warning | zh_CN supports `trial-validated`; en_US supports `draft`; overall `draft` is correct. |
-| Public safety | pass with warning | No real secret or private absolute path found. Screenshots remain unpublished because original screenshots contained identifiable UI details. |
+| Public safety | pass with warning | No real secret, personal information, account-specific URL, or private absolute path found. Screenshots remain unpublished because original screenshots contained identifiable UI details. |
 
 ### SKL-0002: `worktree-conductor`
 
@@ -69,7 +69,7 @@ Both Skills satisfy the repository's implemented Skill structure: bilingual `SKI
 ### SKL-0001 Strengths
 
 - Strong real-world orientation: it requires evidence before drafting public claims.
-- Good public-safety posture: both instructions and examples explicitly avoid credentials, private links, internal hostnames, account data, and unreviewed screenshots.
+- Good public-safety posture: both instructions and examples explicitly avoid credentials, private links, internal hostnames, personal information, account data, and unreviewed screenshots.
 - Useful publication workflow: scope, inspect, evidence packaging, drafting, and pre-publish review map well to real community posts and contest submissions.
 - zh_CN has real trial evidence, not only samples.
 
@@ -99,7 +99,7 @@ Both Skills satisfy the repository's implemented Skill structure: bilingual `SKI
 2. Update both SKL-0002 `SKILL.md` files so their output structure includes `Command Safety Preflight` and `Questions For Human Confirmation` as the same section numbers used by references and samples.
 3. Run a real English trial for SKL-0001 and record a public-safe note before raising en_US above `draft`.
 4. Run real zh_CN and en_US trials for SKL-0002 and record tool, locale, date/context, input summary, observed result, known warnings, and public-safety review.
-5. Add redacted screenshots for SKL-0001 only after verifying no account labels, local paths, private project names, or workspace context are visible.
+5. Add redacted screenshots for SKL-0001 only after verifying no personal labels, account labels, local paths, private project names, or workspace context are visible.
 
 ## Files Inspected
 
@@ -157,7 +157,7 @@ Both Skills satisfy the repository's implemented Skill structure: bilingual `SKI
 - Catalog evidence path existence check: passed.
 - `SKILL.md` frontmatter check: passed.
 - Runtime `references/...` existence check: passed.
-- Public-safety keyword scan: only matched safety policy text and redacted/prohibited examples; no real credentials or local absolute paths were found.
+- Public-safety keyword scan: only matched safety policy text and redacted/prohibited examples; no real credentials, personal information, account-specific URLs, or local absolute paths were found.
 
 ## Not Checked / Assumptions
 

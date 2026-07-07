@@ -88,19 +88,19 @@ Use only statuses defined in `catalog/status-policy.md`.
 For a shared package such as Worktree Conductor Chinese version:
 
 ```text
-https://github.com/fengzhubao/agentarium/tree/main/skills/shared/worktree-conductor/zh_CN
+https://github.com/<owner>/<repo>/tree/main/skills/shared/worktree-conductor/zh_CN
 ```
 
 For a current TRAE-packaged Skill such as SOLO Project Publisher Chinese version:
 
 ```text
-https://github.com/fengzhubao/agentarium/tree/main/skills/trae/solo-project-publisher/zh_CN
+https://github.com/<owner>/<repo>/tree/main/skills/trae/solo-project-publisher/zh_CN
 ```
 
 For the Skill root with all languages:
 
 ```text
-https://github.com/fengzhubao/agentarium/tree/main/skills/trae/solo-project-publisher
+https://github.com/<owner>/<repo>/tree/main/skills/trae/solo-project-publisher
 ```
 
 ## Versioning

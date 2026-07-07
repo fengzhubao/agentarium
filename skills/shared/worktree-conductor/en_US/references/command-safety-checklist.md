@@ -21,5 +21,5 @@ Use this checklist before recommending or running any Git/worktree command.
 
 ## Public Output
 
-- Replace private repository names, customer names, machine paths, and account identifiers with examples.
+- Replace private repository names, customer names, personal names, emails, avatars, machine paths, and account identifiers with examples.
 - Use example worktree paths such as `../repo-runtime`, not real local absolute paths.

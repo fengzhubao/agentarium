@@ -63,8 +63,8 @@ Supported package family names are currently:
 
 ## Public Safety Rules
 
-- Do not commit `.env`, tokens, cookies, private keys, credentials, private repository URLs, customer data, internal hostnames, or unredacted screenshots.
-- Do not quote sensitive local absolute paths in public examples unless they are intentionally redacted.
+- Do not commit `.env`, tokens, cookies, private keys, credentials, private repository URLs, customer data, internal hostnames, personal information, account identifiers, or unredacted screenshots.
+- Do not quote personal names, handles, emails, phone numbers, avatars, machine names, sensitive local absolute paths, or account/workspace labels in public examples unless they are intentionally redacted placeholders.
 - Review screenshots before committing them.
 - Prefer placeholders for missing screenshots, public links, or marketplace links.
 

@@ -11,7 +11,7 @@ Mark these as BLOCKER:
 - Private repository URLs.
 - Internal hosts, private IP-only services, customer names, or customer data.
 - Unredacted screenshot descriptions.
-- Personal accounts, email addresses, machine names, or absolute paths unless they are clear placeholders.
+- Personal names, accounts, email addresses, phone numbers, avatars, user labels, machine names, or absolute paths unless they are clear placeholders.
 
 ## High-Risk Items
 

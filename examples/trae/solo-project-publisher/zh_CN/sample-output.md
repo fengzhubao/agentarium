@@ -36,7 +36,7 @@ SOLO Project Publisher 是一个面向开发者的发布整理 Skill。它不是
 
 ## 6、Skill 链接
 
-- 源码：https://github.com/fengzhubao/agentarium/tree/main/skills/trae/solo-project-publisher/zh_CN
+- 源码：<public-repo-url>/tree/main/skills/trae/solo-project-publisher/zh_CN
 
 ## 7、总结与思考
 

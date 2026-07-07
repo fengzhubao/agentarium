@@ -4,7 +4,7 @@ Use Worktree Conductor to split this development task into a parallel git worktr
 
 ## Repository
 
-Example repository: `metanc_hmi_dsl`
+Example repository: `example_hmi_dsl`
 
 Base branch: `main`
 

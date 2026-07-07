@@ -144,7 +144,7 @@ Additional language versions can be added later under the same Skill directory. 
 
 ## Public Safety
 
-Do not publish credentials, private keys, tokens, cookies, internal hostnames, private repository links, customer data, or machine-specific secrets in this repository.
+Do not publish credentials, private keys, tokens, cookies, internal hostnames, private repository links, customer data, personal information, account identifiers, or machine-specific secrets in this repository.
 
 See `docs/safety.md` before adding a new Skill.
 

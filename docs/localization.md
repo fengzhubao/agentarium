@@ -57,17 +57,17 @@ This requirement is also enforced at the repository-instruction level in `AGENTS
 When linking a Skill from a community post, link to the locale-specific directory. Shared package example:
 
 ```text
-https://github.com/fengzhubao/agentarium/tree/main/skills/shared/worktree-conductor/zh_CN
+https://github.com/<owner>/<repo>/tree/main/skills/shared/worktree-conductor/zh_CN
 ```
 
 Current TRAE package example:
 
 ```text
-https://github.com/fengzhubao/agentarium/tree/main/skills/trae/solo-project-publisher/zh_CN
+https://github.com/<owner>/<repo>/tree/main/skills/trae/solo-project-publisher/zh_CN
 ```
 
 If the audience is mixed, link to the Skill root and list available languages:
 
 ```text
-https://github.com/fengzhubao/agentarium/tree/main/skills/trae/solo-project-publisher
+https://github.com/<owner>/<repo>/tree/main/skills/trae/solo-project-publisher
 ```

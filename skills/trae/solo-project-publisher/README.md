@@ -45,7 +45,7 @@ skills/trae/solo-project-publisher/en_US/SKILL.md
 
 - The Skill does not upload posts by itself.
 - The Skill does not create screenshots or public links by itself.
-- The Skill should not read or expose credentials, tokens, private keys, private repositories, or sensitive local config.
+- The Skill should not read or expose credentials, tokens, private keys, private repositories, personal information, account identifiers, or sensitive local config.
 - The Chinese version has a captured TRAE SOLO trial. The English version is still draft.
 
 ## Related Examples
@@ -54,4 +54,3 @@ skills/trae/solo-project-publisher/en_US/SKILL.md
 - English sample input: `../../../examples/trae/solo-project-publisher/en_US/sample-input.md`
 - Chinese real trial output: `../../../examples/trae/solo-project-publisher/zh_CN/real-trial-output.md`
 - Chinese final forum draft: `../../../examples/trae/solo-project-publisher/zh_CN/final-forum-post.md`
-

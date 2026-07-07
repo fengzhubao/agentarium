@@ -68,7 +68,7 @@ SOLO Project Publisher 是我给自己做的一个发布整理 Skill。
 中间我还调整了公开仓库结构。最开始只是本地草稿，后来单独建了一个 GitHub 仓库：
 
 ```text
-https://github.com/fengzhubao/agentarium
+<public-repo-url>
 ```
 
 仓库里按工具和语言版本组织：
@@ -163,19 +163,19 @@ agentarium/
 
 Skill 源码：
 
-https://github.com/fengzhubao/agentarium/tree/main/skills/trae/solo-project-publisher
+<public-repo-url>/tree/main/skills/trae/solo-project-publisher
 
 中文版本：
 
-https://github.com/fengzhubao/agentarium/tree/main/skills/trae/solo-project-publisher/zh_CN
+<public-repo-url>/tree/main/skills/trae/solo-project-publisher/zh_CN
 
 英文版本：
 
-https://github.com/fengzhubao/agentarium/tree/main/skills/trae/solo-project-publisher/en_US
+<public-repo-url>/tree/main/skills/trae/solo-project-publisher/en_US
 
 示例和试跑输出：
 
-https://github.com/fengzhubao/agentarium/tree/main/examples/trae/solo-project-publisher/zh_CN
+<public-repo-url>/tree/main/examples/trae/solo-project-publisher/zh_CN
 
 Skill 市场链接：暂时没有，后续如果官方支持上传，我再补。
 

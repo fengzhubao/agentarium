@@ -21,11 +21,11 @@
 
 | 任务 | 分支 | Worktree 路径 | 负责人/助手 | 目标 |
 | --- | --- | --- | --- | --- |
-| 共享基础 | `feat/shared-foundation` | `../metanc-hmi-foundation` | Integrator | 确认 DSL 契约、Schema 和生成边界 |
-| 运行时解析 | `feat/runtime-parser` | `../metanc-hmi-runtime` | Codex | 实现 runtime 解析逻辑 |
-| UI 组件生成 | `feat/ui-generator` | `../metanc-hmi-generator` | TRAE | 实现组件生成逻辑 |
-| 示例工程 | `feat/examples` | `../metanc-hmi-examples` | Claude | 补示例工程和演示输入 |
-| 文档 | `feat/docs` | `../metanc-hmi-docs` | TRAE 或人工 | 编写使用指南和集成说明 |
+| 共享基础 | `feat/shared-foundation` | `../example-hmi-foundation` | Integrator | 确认 DSL 契约、Schema 和生成边界 |
+| 运行时解析 | `feat/runtime-parser` | `../example-hmi-runtime` | Codex | 实现 runtime 解析逻辑 |
+| UI 组件生成 | `feat/ui-generator` | `../example-hmi-generator` | TRAE | 实现组件生成逻辑 |
+| 示例工程 | `feat/examples` | `../example-hmi-examples` | Claude | 补示例工程和演示输入 |
+| 文档 | `feat/docs` | `../example-hmi-docs` | TRAE 或人工 | 编写使用指南和集成说明 |
 
 ## 3. 文件归属与禁止触碰范围
 
@@ -65,12 +65,12 @@ git branch --list integration/round-1
 运行 `git worktree add` 前，确认目标路径尚不存在：
 
 ```text
-../metanc-hmi-foundation
-../metanc-hmi-runtime
-../metanc-hmi-generator
-../metanc-hmi-examples
-../metanc-hmi-docs
-../metanc-hmi-integration
+../example-hmi-foundation
+../example-hmi-runtime
+../example-hmi-generator
+../example-hmi-examples
+../example-hmi-docs
+../example-hmi-integration
 ```
 
 不要使用 `git reset --hard`、`git clean -fd`、force push 等破坏性命令，除非用户明确要求并接受风险。
@@ -82,11 +82,11 @@ git fetch origin
 git switch main
 git pull --ff-only
 git switch -c feat/shared-foundation
-git worktree add ../metanc-hmi-runtime -b feat/runtime-parser
-git worktree add ../metanc-hmi-generator -b feat/ui-generator
-git worktree add ../metanc-hmi-examples -b feat/examples
-git worktree add ../metanc-hmi-docs -b feat/docs
-git worktree add ../metanc-hmi-integration -b integration/round-1
+git worktree add ../example-hmi-runtime -b feat/runtime-parser
+git worktree add ../example-hmi-generator -b feat/ui-generator
+git worktree add ../example-hmi-examples -b feat/examples
+git worktree add ../example-hmi-docs -b feat/docs
+git worktree add ../example-hmi-integration -b integration/round-1
 ```
 
 命令里的路径和分支名需要按真实仓库调整。
@@ -118,9 +118,9 @@ git worktree add ../metanc-hmi-integration -b integration/round-1
 ```text
 你负责共享 DSL 基础，不是独占整个仓库；其他助手会在这个基础稳定后进入不同 worktree 并行开发。
 
-仓库：metanc_hmi_dsl
+仓库：example_hmi_dsl
 分支：feat/shared-foundation
-Worktree：../metanc-hmi-foundation
+Worktree：../example-hmi-foundation
 目标：确认 DSL 契约、Schema 边界，以及 generator/runtime 的共同假设。
 
 允许修改：
@@ -153,9 +153,9 @@ Worktree：../metanc-hmi-foundation
 ```text
 你负责运行时 DSL 解析，不是独占整个仓库；其他助手正在不同 worktree 中并行开发。
 
-仓库：metanc_hmi_dsl
+仓库：example_hmi_dsl
 分支：feat/runtime-parser
-Worktree：../metanc-hmi-runtime
+Worktree：../example-hmi-runtime
 目标：基于共享 DSL 契约实现 runtime 解析逻辑。
 
 允许修改：
@@ -183,9 +183,9 @@ Worktree：../metanc-hmi-runtime
 ```text
 你负责 UI 组件生成，不是独占整个仓库；其他助手正在不同 worktree 中并行开发。
 
-仓库：metanc_hmi_dsl
+仓库：example_hmi_dsl
 分支：feat/ui-generator
-Worktree：../metanc-hmi-generator
+Worktree：../example-hmi-generator
 目标：基于共享 DSL 契约实现组件生成逻辑。
 
 允许修改：
@@ -217,9 +217,9 @@ Worktree：../metanc-hmi-generator
 ```text
 你负责示例工程和演示输入，不是独占整个仓库；其他助手正在不同 worktree 中并行开发。
 
-仓库：metanc_hmi_dsl
+仓库：example_hmi_dsl
 分支：feat/examples
-Worktree：../metanc-hmi-examples
+Worktree：../example-hmi-examples
 目标：添加示例工程，展示稳定的 runtime 和 generator 行为。
 
 允许修改：
@@ -253,9 +253,9 @@ Worktree：../metanc-hmi-examples
 ```text
 你负责使用和集成文档，不是独占整个仓库；其他助手正在不同 worktree 中并行开发。
 
-仓库：metanc_hmi_dsl
+仓库：example_hmi_dsl
 分支：feat/docs
-Worktree：../metanc-hmi-docs
+Worktree：../example-hmi-docs
 目标：编写 DSL、runtime parser、generator、examples 和集成流程说明。
 
 允许修改：
@@ -288,9 +288,9 @@ Worktree：../metanc-hmi-docs
 ```text
 你负责 integration/round-1，等待功能分支准备好后再开始。
 
-仓库：metanc_hmi_dsl
+仓库：example_hmi_dsl
 分支：integration/round-1
-Worktree：../metanc-hmi-integration
+Worktree：../example-hmi-integration
 目标：按计划顺序合并已验收分支，必要时统一更新生成物，处理冲突，并运行全量验证。
 
 允许修改：

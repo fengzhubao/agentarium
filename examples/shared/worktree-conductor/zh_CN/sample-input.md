@@ -4,7 +4,7 @@
 
 ## 仓库
 
-示例仓库：`metanc_hmi_dsl`
+示例仓库：`example_hmi_dsl`
 
 目标基线分支：`main`
 

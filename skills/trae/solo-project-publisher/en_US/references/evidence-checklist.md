@@ -15,6 +15,7 @@
 Do not expose:
 
 - Tokens, passwords, cookies, API keys, SSH keys, auth files.
+- Personal names, accounts, emails, phone numbers, avatars, user labels, or profile links.
 - Internal hostnames or customer data.
 - Private repository links unless explicitly allowed.
 - Unnecessary local absolute paths.

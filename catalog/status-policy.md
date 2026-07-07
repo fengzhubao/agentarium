@@ -83,7 +83,7 @@ Everything required for `sampled`, plus per locale:
 - A recorded trial in the target tool, represented by public-safe output, redacted screenshot, or redacted trial note.
 - For shared packages with planned future tools, "target tool" means the actual agent environment used to validate the package, not every tool listed under `target_tools`.
 - Trial evidence identifies tool, locale, date or context, and observed result.
-- Sensitive local paths, account data, private repository URLs, and credentials are absent or redacted.
+- Sensitive local paths, personal information, account data, private repository URLs, and credentials are absent or redacted.
 
 ### ready
 

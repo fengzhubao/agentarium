@@ -32,7 +32,7 @@ Confirm these details quickly. If the user already provided them, do not ask aga
 - Known modules, shared files, generated outputs, submodules, and lockfiles.
 - Files or directories that must not be touched.
 - Validation commands, if known.
-- Whether the output will be public; if yes, redact local paths and internal details.
+- Whether the output will be public; if yes, redact personal information, account identifiers, local paths, and internal details.
 
 If information is incomplete, produce a draft from what is known and list gaps under "Questions For Human Confirmation".
 
@@ -98,7 +98,7 @@ Load these only when needed:
 
 ## Public Safety
 
-- Do not output tokens, cookies, private keys, accounts, or internal hostnames.
-- Do not publish private repository URLs, customer names, or real internal paths.
+- Do not output tokens, cookies, private keys, personal names, accounts, emails, avatars, user labels, or internal hostnames.
+- Do not publish private repository URLs, customer names, personal identifiers, or real internal paths.
 - Replace local paths with example paths in public output.
 - If the user wants a public post, include a redaction checklist at the end.

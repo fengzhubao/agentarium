@@ -28,6 +28,7 @@ Use this checklist before calling a Skill ready for public use.
 - [ ] Skill README explains suitable agent/model capabilities and unsuitable contexts.
 - [ ] Reference files linked from `SKILL.md` resolve within the importable locale directory.
 - [ ] Examples are redacted and public-safe.
+- [ ] Examples do not expose personal names, handles, emails, phone numbers, avatars, account identifiers, machine names, or user/workspace labels.
 - [ ] Chinese and English versions are behaviorally aligned.
 - [ ] Locale-specific templates are clearly labeled.
 - [ ] Public-safety boundaries are explicit.
@@ -39,7 +40,7 @@ Use this checklist before calling a Skill ready for public use.
 - [ ] Each required locale directory can be imported independently as a Skill root.
 - [ ] The sample input produces the expected output shape.
 - [ ] Missing screenshots, source links, or marketplace links are marked as placeholders.
-- [ ] No secrets or private paths are present.
+- [ ] No secrets, personal information, account identifiers, machine names, or private paths are present.
 - [ ] `STATUS.md` reflects the current readiness.
 - [ ] Trial or ready status has evidence required by `catalog/status-policy.md`.
 - [ ] Relative links from `SKILL.md` and references resolve correctly.

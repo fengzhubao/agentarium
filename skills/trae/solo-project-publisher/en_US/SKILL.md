@@ -20,7 +20,7 @@ The output must be grounded in evidence such as files, commands, screenshots, di
 
 - The user only wants a marketing article without project evidence.
 - The user asks you to invent screenshots, test results, user feedback, or source links.
-- The material mainly contains private data, customer data, or internal incident details without a clear redaction boundary.
+- The material mainly contains personal information, private data, customer data, or internal incident details without a clear redaction boundary.
 - The user asks you to read or expose credentials, keys, cookies, tokens, private keys, or auth files.
 
 ## Recommended Input
@@ -71,7 +71,7 @@ If the input is incomplete, infer from the current directory, repository state, 
    - Use concise Chinese only when the target channel is a Chinese community post, such as the TRAE SOLO Skill contest.
 
 5. Pre-Publish Review
-   - Check for keys, private hostnames, private repository links, accounts, tokens, or unnecessary local absolute paths.
+   - Check for keys, private hostnames, private repository links, personal names, accounts, emails, avatars, tokens, or unnecessary local absolute paths.
    - Check whether each key claim has evidence.
    - Mark missing screenshots, public links, or marketplace links.
    - Provide a short next-step checklist.
@@ -89,7 +89,7 @@ If evidence is missing, do not invent it. Mark it clearly as `[TODO]`.
 ## Public-Safety Rules
 
 - Do not read `auth.json`, `.env`, private keys, tokens, cookies, or password files.
-- Do not expose internal hostnames, private repository URLs, customer names, real accounts, or machine fingerprints.
+- Do not expose internal hostnames, private repository URLs, customer names, personal names, real accounts, emails, avatars, user labels, or machine fingerprints.
 - For public output, use relative paths or redacted placeholders by default. Keep local absolute paths only for non-public internal reports with a clear reason.
 - For public community output, always include a pre-publish safety check.
 

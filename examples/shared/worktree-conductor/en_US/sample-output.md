@@ -21,11 +21,11 @@ Recommended parallelism: 3 implementation tasks plus 1 docs/examples task.
 
 | Task | Branch | Worktree Path | Owner/Agent | Goal |
 | --- | --- | --- | --- | --- |
-| Shared foundation | `feat/shared-foundation` | `../metanc-hmi-foundation` | Integrator | Confirm DSL contract, schema, and generation boundaries |
-| Runtime parser | `feat/runtime-parser` | `../metanc-hmi-runtime` | Codex | Implement runtime parsing |
-| UI generator | `feat/ui-generator` | `../metanc-hmi-generator` | TRAE | Implement component generation |
-| Examples | `feat/examples` | `../metanc-hmi-examples` | Claude | Add example projects and demo inputs |
-| Docs | `feat/docs` | `../metanc-hmi-docs` | TRAE or human | Write usage and integration guides |
+| Shared foundation | `feat/shared-foundation` | `../example-hmi-foundation` | Integrator | Confirm DSL contract, schema, and generation boundaries |
+| Runtime parser | `feat/runtime-parser` | `../example-hmi-runtime` | Codex | Implement runtime parsing |
+| UI generator | `feat/ui-generator` | `../example-hmi-generator` | TRAE | Implement component generation |
+| Examples | `feat/examples` | `../example-hmi-examples` | Claude | Add example projects and demo inputs |
+| Docs | `feat/docs` | `../example-hmi-docs` | TRAE or human | Write usage and integration guides |
 
 ## 3. File Ownership And Forbidden Areas
 
@@ -65,12 +65,12 @@ git branch --list integration/round-1
 Before running `git worktree add`, confirm the target paths do not already exist:
 
 ```text
-../metanc-hmi-foundation
-../metanc-hmi-runtime
-../metanc-hmi-generator
-../metanc-hmi-examples
-../metanc-hmi-docs
-../metanc-hmi-integration
+../example-hmi-foundation
+../example-hmi-runtime
+../example-hmi-generator
+../example-hmi-examples
+../example-hmi-docs
+../example-hmi-integration
 ```
 
 Do not use destructive commands such as `git reset --hard`, `git clean -fd`, or force push unless the user explicitly asks for them and accepts the risk.
@@ -82,11 +82,11 @@ git fetch origin
 git switch main
 git pull --ff-only
 git switch -c feat/shared-foundation
-git worktree add ../metanc-hmi-runtime -b feat/runtime-parser
-git worktree add ../metanc-hmi-generator -b feat/ui-generator
-git worktree add ../metanc-hmi-examples -b feat/examples
-git worktree add ../metanc-hmi-docs -b feat/docs
-git worktree add ../metanc-hmi-integration -b integration/round-1
+git worktree add ../example-hmi-runtime -b feat/runtime-parser
+git worktree add ../example-hmi-generator -b feat/ui-generator
+git worktree add ../example-hmi-examples -b feat/examples
+git worktree add ../example-hmi-docs -b feat/docs
+git worktree add ../example-hmi-integration -b integration/round-1
 ```
 
 Adjust paths and branch names to the actual repository.
@@ -118,9 +118,9 @@ Adjust paths and branch names to the actual repository.
 ```text
 You are responsible for shared DSL foundation. You are not alone in this repository; other agents will work in separate worktrees after this foundation is stable.
 
-Repository: metanc_hmi_dsl
+Repository: example_hmi_dsl
 Branch: feat/shared-foundation
-Worktree: ../metanc-hmi-foundation
+Worktree: ../example-hmi-foundation
 Goal: Confirm DSL contract, schema boundaries, and generator/runtime assumptions before parallel implementation starts.
 
 Allowed paths:
@@ -153,9 +153,9 @@ Requirements:
 ```text
 You are responsible for runtime DSL parsing. You are not alone in this repository; other agents are working in separate worktrees.
 
-Repository: metanc_hmi_dsl
+Repository: example_hmi_dsl
 Branch: feat/runtime-parser
-Worktree: ../metanc-hmi-runtime
+Worktree: ../example-hmi-runtime
 Goal: Implement runtime parsing against the shared DSL contract.
 
 Allowed paths:
@@ -183,9 +183,9 @@ Finish with a change summary, validation results, risks, and follow-ups. Do not 
 ```text
 You are responsible for UI component generation. You are not alone in this repository; other agents are working in separate worktrees.
 
-Repository: metanc_hmi_dsl
+Repository: example_hmi_dsl
 Branch: feat/ui-generator
-Worktree: ../metanc-hmi-generator
+Worktree: ../example-hmi-generator
 Goal: Implement component generation against the shared DSL contract.
 
 Allowed paths:
@@ -217,9 +217,9 @@ Requirements:
 ```text
 You are responsible for example projects and demo inputs. You are not alone in this repository; other agents are working in separate worktrees.
 
-Repository: metanc_hmi_dsl
+Repository: example_hmi_dsl
 Branch: feat/examples
-Worktree: ../metanc-hmi-examples
+Worktree: ../example-hmi-examples
 Goal: Add example projects that demonstrate the stable runtime and generator behavior.
 
 Allowed paths:
@@ -253,9 +253,9 @@ Requirements:
 ```text
 You are responsible for usage and integration documentation. You are not alone in this repository; other agents are working in separate worktrees.
 
-Repository: metanc_hmi_dsl
+Repository: example_hmi_dsl
 Branch: feat/docs
-Worktree: ../metanc-hmi-docs
+Worktree: ../example-hmi-docs
 Goal: Write guides that explain the DSL, runtime parser, generator, examples, and integration workflow.
 
 Allowed paths:
@@ -288,9 +288,9 @@ Requirements:
 ```text
 You are responsible for integration/round-1 after feature branches are ready.
 
-Repository: metanc_hmi_dsl
+Repository: example_hmi_dsl
 Branch: integration/round-1
-Worktree: ../metanc-hmi-integration
+Worktree: ../example-hmi-integration
 Goal: Merge approved branches in order, regenerate outputs if required, resolve conflicts, and run full validation.
 
 Allowed paths:

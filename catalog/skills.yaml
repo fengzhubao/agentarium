@@ -28,7 +28,7 @@ skills:
         - "Models with strong summarization, public-writing, evidence synthesis, and safety-review ability."
       not_suitable_for:
         - "Chat-only models without file or evidence access when the user expects evidence-backed claims."
-        - "Agents that cannot keep private paths, credentials, screenshots, and account details out of public drafts."
+        - "Agents that cannot keep private paths, credentials, screenshots, personal information, and account details out of public drafts."
     supported_tools:
       - trae
     target_tools:

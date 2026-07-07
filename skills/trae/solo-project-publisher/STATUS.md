@@ -16,7 +16,7 @@ The Chinese version has been loaded and run once in TRAE SOLO on Windows. The tr
 - Repository-level publishing, importing, safety, completeness, and localization docs.
 - Real TRAE SOLO trial output.
 - Real TRAE SOLO trial screenshots were reviewed locally, but are not published here because they include identifiable UI details. Redacted screenshots are still needed.
-- Public GitHub source link.
+- Public source link placeholder.
 
 ## Trial Evidence
 
@@ -24,7 +24,7 @@ The Chinese version has been loaded and run once in TRAE SOLO on Windows. The tr
 - Redacted screenshots: pending.
 - Final publishable draft: `../../../examples/trae/solo-project-publisher/zh_CN/final-forum-post.md`
 
-Local screenshot evidence was used for validation, but the original screenshots are not published in this repository. They showed identifiable TRAE UI details such as user labels and task names. Before public posting, create redacted screenshots that hide personal labels, local paths, project names that should not be public, and any account or machine details.
+Local screenshot evidence was used for validation, but the original screenshots are not published in this repository. They showed identifiable TRAE UI details such as user labels and task names. Before public posting, create redacted screenshots that hide personal labels, account identifiers, avatars, local paths, project names that should not be public, and any account or machine details.
 
 ## Known Issues From Trial
 
@@ -44,7 +44,7 @@ Local screenshot evidence was used for validation, but the original screenshots 
 | Real trial output | Done |
 | Redacted screenshots | Pending |
 | Public safety docs | Done |
-| Public source link | Done |
+| Public source link | Placeholder / pending final review |
 | Final forum draft | Done |
 | Skill marketplace link | Not available yet |
 
