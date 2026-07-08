@@ -8,7 +8,7 @@ authoritative; this file only points to them and defines scan boundaries.
 
 - name: agentarium
 - status: active
-- updated: 2026-07-06
+- updated: 2026-07-08
 - vcs: git
 - default_branch: main
 
@@ -22,7 +22,7 @@ workspace-level root set maintained by `hug_scripts`.
 workspace:
   schema: "hug.workspace.v2"
   workspace_paths:
-    - "agentarium"
+    - "fengzhubao/agentarium"
   root_sets:
     - "luppiter-projects"
   root_sources:
