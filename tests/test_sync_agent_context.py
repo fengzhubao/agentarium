@@ -2,6 +2,8 @@ import codecs
 import contextlib
 import io
 import json
+import os
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -149,6 +151,37 @@ class AgentContextSyncTests(unittest.TestCase):
         self.assertIn("--- a/AGENTS.md", stdout)
         self.assertIn("+++ b/AGENTS.md", stdout)
         self.assertEqual(before, after)
+
+    def test_cli_diff_emits_utf8_under_legacy_redirected_encoding(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repo(
+                root,
+                source="# Shared rules\n\n- ✅ Shipped.\n",
+                targets=("AGENTS.md",),
+            )
+            environment = os.environ.copy()
+            environment["PYTHONIOENCODING"] = "cp1252"
+
+            completed = subprocess.run(
+                [
+                    sys.executable,
+                    "-S",
+                    str(ZH_SCRIPT),
+                    "diff",
+                    "--repo-root",
+                    str(root),
+                ],
+                cwd=ROOT,
+                env=environment,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                check=False,
+            )
+
+        self.assertEqual(1, completed.returncode)
+        self.assertIn("✅ Shipped.", completed.stdout.decode("utf-8"))
+        self.assertEqual(b"", completed.stderr)
 
     def test_crlf_target_preserves_crlf_and_unmanaged_bytes(self):
         with tempfile.TemporaryDirectory() as directory:

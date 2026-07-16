@@ -189,7 +189,7 @@ skills:
     category: context
     scope: shared
     status: ready
-    status_note: "Both locale packages completed public-safe Codex trials, 18 regression tests, Linux/Windows CI, and final maintainer release review on 2026-07-16."
+    status_note: "Both locale packages completed public-safe Codex trials, followed by a real Windows multi-repository pilot and 19 regression tests including legacy redirected-output encoding; Linux/Windows CI and final maintainer review passed on 2026-07-16."
     summary_zh: "同步 AGENTS.md、CLAUDE.md、Codex instructions、Cursor rules 等跨 agent 上下文。"
     summary_en: "Keeps AGENTS.md, CLAUDE.md, Codex instructions, Cursor rules, and other agent context files aligned."
     model_fit:
@@ -210,7 +210,7 @@ skills:
     variants:
       - tool: shared
         status: ready
-        status_note: "The shared variant passed bilingual Codex trials, 18 regression tests, cross-platform CI, and final maintainer release review."
+        status_note: "The shared variant passed bilingual Codex trials, a real Windows multi-repository pilot, 19 regression tests including legacy redirected-output encoding, cross-platform CI, and final maintainer review."
         package_root: skills/shared/agent-context-sync
         readme_file: skills/shared/agent-context-sync/README.md
         status_file: skills/shared/agent-context-sync/STATUS.md

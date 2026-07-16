@@ -32,6 +32,18 @@ FORBIDDEN_BASENAMES = {
 FORBIDDEN_SUFFIXES = {".key", ".p12", ".pem", ".pfx"}
 
 
+def _configure_cli_streams() -> None:
+    """Emit exact Unicode output even under legacy redirected code pages."""
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if not callable(reconfigure):
+            continue
+        try:
+            reconfigure(encoding="utf-8")
+        except (OSError, ValueError):
+            pass
+
+
 class SyncError(Exception):
     """A configuration or target-state error that prevents safe synchronization."""
 
@@ -383,4 +395,5 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
+    _configure_cli_streams()
     raise SystemExit(main())

@@ -15,6 +15,7 @@ Both `zh_CN` and `en_US` import roots were loaded and run in Codex on 2026-07-16
 - Read-only `check` and `diff` modes.
 - Explicit-write `sync` mode with managed-block-only replacement.
 - Repository path containment, marker validation, UTF-8/BOM handling, and LF/CRLF preservation.
+- UTF-8 CLI output when redirected Windows streams start with a legacy code page.
 - Standard-library regression tests.
 - Real Codex trial for `zh_CN`.
 - Real Codex trial for `en_US`.
@@ -27,11 +28,17 @@ Both `zh_CN` and `en_US` import roots were loaded and run in Codex on 2026-07-16
 | `zh_CN` | Codex (`codex-cli 0.144.4`) | 2026-07-16 | `examples/shared/agent-context-sync/zh_CN/real-trial-output.md` | Pass; 3 drifted targets synchronized, final 0 drift |
 | `en_US` | Codex (`codex-cli 0.144.4`) | 2026-07-16 | `examples/shared/agent-context-sync/en_US/real-trial-output.md` | Pass; behavior aligned with zh_CN |
 
+## Follow-up Windows Pilot
+
+On 2026-07-16, the shared package was applied to four clean active repositories with `AGENTS.md` as the source and Claude or Gemini instruction files as targets. The pilot covered missing-target creation, existing-target migration, multiple targets, unmanaged prefaces, and repeated synchronization. All final checks reported zero drift, and a second `sync` updated no files.
+
+One source contained Chinese text and emoji. Its first `diff` exposed a `UnicodeEncodeError` when redirected Windows output inherited a legacy code page. The CLI now configures stdout and stderr as UTF-8 at process entry, and a subprocess regression test forces `PYTHONIOENCODING=cp1252` to verify lossless output. Current locale-local script SHA-256: `EBD228160B1B527011F137841B009EC53746433964F3A77CF8C2168A819C788C`; both copies are byte-identical.
+
 ## Final Release Review
 
-- Both locale trial records contain the required public-safe metadata and final script SHA-256.
+- Both locale trial records contain the required public-safe metadata and the script SHA-256 used for those trials; the current follow-up hash is recorded above.
 - The two locale-local script copies are byte-identical.
-- All 18 Agent Context Sync tests passed as part of the 42-test repository suite.
+- All 19 Agent Context Sync tests passed as part of the 43-test repository suite.
 - CI passed on Ubuntu Python 3.10, Ubuntu Python 3.12, and Windows Python 3.12.
 - Full strict Agentarium validation passed with 0 errors and 0 warnings.
 - Configuration paths, markers, sensitive-file rejection, links, bilingual behavior, and public-safety boundaries passed review.
@@ -48,7 +55,7 @@ Optional future work includes trials in TRAE, Claude, or Cursor-oriented reposit
 | en_US version | Trial-validated |
 | Sample input/output | Done for both locales |
 | Deterministic script | Done |
-| Regression tests | 18 passing in the recorded local run |
+| Regression tests | 19 passing in the current cross-platform suite |
 | Real trial output | Done for both locales |
 | Public safety boundary | Done |
 | Final ready review | Done |
