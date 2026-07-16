@@ -1,0 +1,6 @@
+{
+  "source": "AGENTS.md",
+  "targets": [
+    "CLAUDE.md"
+  ]
+}

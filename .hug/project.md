@@ -8,7 +8,7 @@ authoritative; this file only points to them and defines scan boundaries.
 
 - name: agentarium
 - status: active
-- updated: 2026-07-08
+- updated: 2026-07-16
 - vcs: git
 - default_branch: main
 
@@ -38,9 +38,11 @@ workspace:
 ## Source Of Truth
 
 - repository_overview: README.md
+- agent_instructions: AGENTS.md
 - solo_project_publisher_status: skills/trae/solo-project-publisher/STATUS.md
 - worktree_conductor_status: skills/shared/worktree-conductor/STATUS.md
 - skill_quality_auditor_status: skills/shared/skill-quality-auditor/STATUS.md
+- agent_context_sync_status: skills/shared/agent-context-sync/STATUS.md
 
 ## Subprojects
 
@@ -48,6 +50,7 @@ workspace:
 | --- | --- | --- |
 | skills/shared/worktree-conductor | Worktree Conductor | skills/shared/worktree-conductor/STATUS.md |
 | skills/shared/skill-quality-auditor | Skill Quality Auditor | skills/shared/skill-quality-auditor/STATUS.md |
+| skills/shared/agent-context-sync | Agent Context Sync | skills/shared/agent-context-sync/STATUS.md |
 | skills/trae/solo-project-publisher | SOLO Project Publisher | skills/trae/solo-project-publisher/STATUS.md |
 | skills/codex | Codex skills | README.md |
 | skills/claude | Claude skills | README.md |
@@ -60,14 +63,19 @@ workspace:
 ## Entrypoints
 
 - repository_overview: `README.md`
+- agent_instructions: `AGENTS.md`
 - solo_project_publisher_status: `skills/trae/solo-project-publisher/STATUS.md`
 - worktree_conductor_status: `skills/shared/worktree-conductor/STATUS.md`
 - skill_quality_auditor_status: `skills/shared/skill-quality-auditor/STATUS.md`
+- agent_context_sync_status: `skills/shared/agent-context-sync/STATUS.md`
 
 ## Hug Scan
 
 - include:
   - README.md
+  - AGENTS.md
+  - CLAUDE.md
+  - .agent-context-sync.json
   - .hug/project.md
   - skills/
   - examples/
