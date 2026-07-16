@@ -1,6 +1,6 @@
 # Worktree Conductor Sample Output
 
-Note: this is a redacted sample showing the intended output shape. Save real target-tool trial output and public-safe evidence after testing the current implemented package.
+Note: this is a redacted sample showing the intended output shape. Current bilingual real-trial evidence is recorded in each locale's `real-trial-output.md`.
 
 ````markdown
 # Worktree Conductor Plan

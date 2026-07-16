@@ -13,8 +13,9 @@ For agent-facing repository instructions, read `AGENTS.md` first. For the machin
 | ID | Implemented Package(s) | Target Tools | Skill | Scope | Languages | Status | Purpose |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | SKL-0001 | `trae` | `trae` | SOLO Project Publisher | shared | `zh_CN`, `en_US` | `zh_CN` trial validated, `en_US` draft | Turn real project evidence into a publishable community post or project report. |
-| SKL-0002 | `shared` | `trae`, `codex`, `claude` | Worktree Conductor | shared | `zh_CN`, `en_US` | Sampled | Plan safe parallel development across Git worktrees, branches, file ownership boundaries, and integration order. |
-| SKL-0003 | `shared` | `trae`, `codex`, `claude` | Skill Quality Auditor | shared | `zh_CN`, `en_US` | Trial-validated | Audit Skill package quality, catalog alignment, locale parity, evidence, links, and public-safety risk. Includes an independently importable deterministic validator in both locales. |
+| SKL-0002 | `shared` | `trae`, `codex`, `claude` | Worktree Conductor | shared | `zh_CN`, `en_US` | Trial-validated | Plan safe parallel development across Git worktrees, branches, file ownership boundaries, and integration order. |
+| SKL-0003 | `shared` | `trae`, `codex`, `claude` | Skill Quality Auditor | shared | `zh_CN`, `en_US` | Ready | Audit Skill package quality, catalog alignment, locale parity, evidence, links, and public-safety risk. Includes an independently importable deterministic validator in both locales. |
+| SKL-0004 | `shared` | `trae`, `codex`, `claude` | Agent Context Sync | shared | `zh_CN`, `en_US` | Trial-validated | Check, diff, and synchronize one shared rule source across agent instruction files without overwriting tool-specific content. |
 
 Planned and candidate Skills are tracked in `catalog/skills.yaml`.
 
@@ -38,6 +39,9 @@ agentarium/
 │   └── status-policy.md
 ├── skills/
 │   ├── shared/
+│   │   ├── agent-context-sync/
+│   │   │   ├── zh_CN/
+│   │   │   └── en_US/
 │   │   ├── worktree-conductor/
 │   │   │   ├── zh_CN/
 │   │   │   └── en_US/
@@ -50,6 +54,9 @@ agentarium/
 │           └── en_US/
 ├── examples/
 │   ├── shared/
+│   │   ├── agent-context-sync/
+│   │   │   ├── zh_CN/
+│   │   │   └── en_US/
 │   │   ├── worktree-conductor/
 │   │   │   ├── zh_CN/
 │   │   │   └── en_US/
@@ -100,6 +107,20 @@ skills/shared/skill-quality-auditor/en_US/
 
 The Skill expects a Skill ID or package path, target status or review goal, and permission boundaries for read-only audit versus fixes.
 
+For the Chinese import root of the shared Agent Context Sync package:
+
+```text
+skills/shared/agent-context-sync/zh_CN/
+```
+
+For the English import root:
+
+```text
+skills/shared/agent-context-sync/en_US/
+```
+
+The Skill expects a repository-local JSON config, one shared Markdown source, target instruction files, and explicit authorization before write-mode synchronization.
+
 For the Chinese TRAE package of SOLO Project Publisher:
 
 ```text
@@ -127,6 +148,8 @@ skills/shared/worktree-conductor/README.md
 skills/shared/worktree-conductor/STATUS.md
 skills/shared/skill-quality-auditor/README.md
 skills/shared/skill-quality-auditor/STATUS.md
+skills/shared/agent-context-sync/README.md
+skills/shared/agent-context-sync/STATUS.md
 ```
 
 Before calling a Skill complete, check `docs/skill-completeness.md`.

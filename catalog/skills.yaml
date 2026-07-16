@@ -74,8 +74,8 @@ skills:
     title: Worktree Conductor
     category: development
     scope: shared
-    status: sampled
-    status_note: "Bilingual public-safe sample inputs and outputs exist for the shared package; real target-agent trial evidence is pending."
+    status: trial-validated
+    status_note: "Both locale packages were run in Codex on 2026-07-16 against the real SKL-0004 planning task with public-safe trial records."
     summary_zh: "规划多 agent 或多人协作下的 Git worktree 并行开发。"
     summary_en: "Plans safe parallel development across Git worktrees, branches, and agents."
     model_fit:
@@ -96,29 +96,31 @@ skills:
       - en_US
     variants:
       - tool: shared
-        status: sampled
-        status_note: "Bilingual samples, workflow templates, and command-safety checks exist; real target-agent trial evidence is pending."
+        status: trial-validated
+        status_note: "Both locale packages have public-safe Codex trial records for the real SKL-0004 planning task from 2026-07-16."
         package_root: skills/shared/worktree-conductor
         readme_file: skills/shared/worktree-conductor/README.md
         status_file: skills/shared/worktree-conductor/STATUS.md
         examples_root: examples/shared/worktree-conductor
         locale_roots:
           zh_CN:
-            status: sampled
+            status: trial-validated
             import_root: skills/shared/worktree-conductor/zh_CN
             skill_file: skills/shared/worktree-conductor/zh_CN/SKILL.md
             examples_root: examples/shared/worktree-conductor/zh_CN
             evidence:
               sample_input: examples/shared/worktree-conductor/zh_CN/sample-input.md
               sample_output: examples/shared/worktree-conductor/zh_CN/sample-output.md
+              trial_output: examples/shared/worktree-conductor/zh_CN/real-trial-output.md
           en_US:
-            status: sampled
+            status: trial-validated
             import_root: skills/shared/worktree-conductor/en_US
             skill_file: skills/shared/worktree-conductor/en_US/SKILL.md
             examples_root: examples/shared/worktree-conductor/en_US
             evidence:
               sample_input: examples/shared/worktree-conductor/en_US/sample-input.md
               sample_output: examples/shared/worktree-conductor/en_US/sample-output.md
+              trial_output: examples/shared/worktree-conductor/en_US/real-trial-output.md
     tags:
       - git
       - worktree
@@ -129,8 +131,8 @@ skills:
     title: Skill Quality Auditor
     category: quality
     scope: shared
-    status: trial-validated
-    status_note: "Both locale packages were imported and run in Codex on 2026-07-16 with public-safe trial records; final ready review remains pending."
+    status: ready
+    status_note: "Both locale packages have public-safe Codex trials, and the final maintainer release review passed on 2026-07-16."
     summary_zh: "审计 Skill 包的结构、触发描述、双语一致性、示例、断链和公开安全风险。"
     summary_en: "Audits Skill package structure, trigger descriptions, locale parity, examples, broken links, and public-safety risks."
     model_fit:
@@ -151,8 +153,8 @@ skills:
       - en_US
     variants:
       - tool: shared
-        status: trial-validated
-        status_note: "Both locale packages have public-safe Codex trial records from 2026-07-16; this shared variant remains below ready pending final release review."
+        status: ready
+        status_note: "Both locale packages have public-safe Codex trial records, and the shared variant passed final maintainer release review on 2026-07-16."
         package_root: skills/shared/skill-quality-auditor
         readme_file: skills/shared/skill-quality-auditor/README.md
         status_file: skills/shared/skill-quality-auditor/STATUS.md
@@ -186,7 +188,8 @@ skills:
     title: Agent Context Sync
     category: context
     scope: shared
-    status: candidate
+    status: trial-validated
+    status_note: "Both locale packages completed public-safe Codex check/diff/sync trials on 2026-07-16."
     summary_zh: "同步 AGENTS.md、CLAUDE.md、Codex instructions、Cursor rules 等跨 agent 上下文。"
     summary_en: "Keeps AGENTS.md, CLAUDE.md, Codex instructions, Cursor rules, and other agent context files aligned."
     model_fit:
@@ -195,7 +198,8 @@ skills:
         - "Models with long-context comparison and policy-consistency judgment."
       not_suitable_for:
         - "Models that cannot inspect the actual instruction files being synchronized."
-    supported_tools: []
+    supported_tools:
+      - shared
     target_tools:
       - trae
       - codex
@@ -203,7 +207,33 @@ skills:
     required_locales:
       - zh_CN
       - en_US
-    variants: []
+    variants:
+      - tool: shared
+        status: trial-validated
+        status_note: "Both required locales completed public-safe Codex trials using the locale-local deterministic script."
+        package_root: skills/shared/agent-context-sync
+        readme_file: skills/shared/agent-context-sync/README.md
+        status_file: skills/shared/agent-context-sync/STATUS.md
+        examples_root: examples/shared/agent-context-sync
+        locale_roots:
+          zh_CN:
+            status: trial-validated
+            import_root: skills/shared/agent-context-sync/zh_CN
+            skill_file: skills/shared/agent-context-sync/zh_CN/SKILL.md
+            examples_root: examples/shared/agent-context-sync/zh_CN
+            evidence:
+              sample_input: examples/shared/agent-context-sync/zh_CN/sample-input.md
+              sample_output: examples/shared/agent-context-sync/zh_CN/sample-output.md
+              trial_output: examples/shared/agent-context-sync/zh_CN/real-trial-output.md
+          en_US:
+            status: trial-validated
+            import_root: skills/shared/agent-context-sync/en_US
+            skill_file: skills/shared/agent-context-sync/en_US/SKILL.md
+            examples_root: examples/shared/agent-context-sync/en_US
+            evidence:
+              sample_input: examples/shared/agent-context-sync/en_US/sample-input.md
+              sample_output: examples/shared/agent-context-sync/en_US/sample-output.md
+              trial_output: examples/shared/agent-context-sync/en_US/real-trial-output.md
     tags:
       - context
       - instructions

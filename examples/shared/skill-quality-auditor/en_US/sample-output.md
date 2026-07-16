@@ -4,15 +4,15 @@
 
 PASS WITH WARNINGS
 
-Target: SKL-0002 / `worktree-conductor`
-Claimed status: `sampled`
-Supported status: `sampled`
+Target: SKL-0004 / `agent-context-sync`
+Claimed status: `trial-validated`
+Supported status: `trial-validated`
 
-The current package structure, bilingual instructions, runtime references, and sample evidence support `sampled`. They do not support `trial-validated` yet because no real target-tool trial output or redacted trial note is present for the implemented package.
+The package structure, bilingual instructions, configuration reference, byte-identical scripts, samples, and bilingual Codex trials support `trial-validated`. A final `ready` claim still requires complete CI and maintainer release review.
 
 ## Deterministic Preflight
 
-- Command: `python scripts/validate_agentarium.py --repo-root <repo-root> --skill SKL-0002 --strict`
+- Command: `python scripts/validate_agentarium.py --repo-root <repo-root> --skill SKL-0004 --strict`
 - Exit code: `0`
 - Errors: `0`
 - Warnings: `0`
@@ -20,9 +20,9 @@ The current package structure, bilingual instructions, runtime references, and s
 
 ## Manual Judgment
 
-- Behavioral locale parity: Pass; both locales align on workflow, command safety, and output structure.
-- Evidence metadata, semantics, and authenticity: Pass for `sampled`; bilingual samples exist, but real trial evidence is missing.
-- Nuanced public-safety and screenshot review: Pass; samples use placeholder paths, and no screenshots are committed.
+- Behavioral locale parity: Pass; both locales align on triggers, check/diff/sync authority, configuration, and output structure.
+- Evidence metadata, semantics, and authenticity: Pass for `trial-validated`; both real trial records contain required fields and point to the current script version.
+- Nuanced public-safety and screenshot review: Pass; samples and trials use placeholder paths, and no screenshots are committed.
 
 ## Findings
 
@@ -36,28 +36,27 @@ The current package structure, bilingual instructions, runtime references, and s
 
 ### MEDIUM
 
-- `skills/shared/worktree-conductor/STATUS.md`: Real target-tool trial evidence is still missing for the implemented package. Impact: the Skill cannot be promoted to `trial-validated` or `ready`. Fix: add one public-safe trial record for each of `zh_CN` and `en_US`, including tool, locale, date or context, input summary, observed result, and public-safety result.
+- None.
 
 ### LOW
 
-- `skills/shared/worktree-conductor/STATUS.md`: Screenshots and a final community post remain optional pending items. Impact: this does not block `sampled`, but it affects publication package completeness. Fix: add redacted screenshots and a final post after real trial validation.
+- `skills/shared/agent-context-sync/STATUS.md`: Final `ready` review remains pending. Impact: this does not block `trial-validated`, but the package cannot claim final release completion yet. Fix: perform maintainer release review after cross-platform CI passes.
 
 ## Check Matrices
 
 | Check | Result | Notes |
 | --- | --- | --- |
-| Catalog schema v2 | pass | ID, package variant, locale roots, and evidence paths exist. |
-| Package structure | pass | Root README/STATUS, both locale `SKILL.md` files, and references exist. |
-| Locale parity | pass | Chinese and English versions cover the same worktree orchestration, command safety, and output shape. |
-| References and links | pass | Runtime reference files listed by `SKILL.md` exist. |
-| Evidence gates | pass with warning | Samples support `sampled`; real trial evidence is missing. |
-| Public safety | pass | Examples use placeholder paths and public-safe project names; no secrets or private URLs found. |
+| Catalog schema v2 | pass | ID, shared variant, locale roots, and trial evidence paths exist. |
+| Package structure | pass | Root README/STATUS, bilingual `SKILL.md` files, config references, and scripts exist. |
+| Locale parity | pass | Both locales align on authority, CLI, markers, exit codes, and safety rules. |
+| References and links | pass | Config references and catalog evidence paths exist. |
+| Evidence gates | pass | Bilingual samples and real Codex trials support `trial-validated`. |
+| Public safety | pass | Paths are redacted, and the script rejects sensitive filenames and repository escapes. |
 
 ## Required Next Actions
 
-- Keep the current status at `sampled`.
-- Do not mark the Skill `trial-validated` until both locales have real target-tool trial evidence.
-- Re-run the public-safety check before public publication.
+- Keep the current status at `trial-validated` until cross-platform CI and final release review finish.
+- Re-run full strict validation and public-safety review before publication.
 
 ## Files Inspected
 
@@ -70,16 +69,18 @@ The current package structure, bilingual instructions, runtime references, and s
 - `docs/localization.md`
 - `docs/safety.md`
 - `docs/skill-completeness.md`
-- `skills/shared/worktree-conductor/README.md`
-- `skills/shared/worktree-conductor/STATUS.md`
-- `skills/shared/worktree-conductor/zh_CN/SKILL.md`
-- `skills/shared/worktree-conductor/en_US/SKILL.md`
-- `skills/shared/worktree-conductor/zh_CN/references/`
-- `skills/shared/worktree-conductor/en_US/references/`
-- `examples/shared/worktree-conductor/zh_CN/`
-- `examples/shared/worktree-conductor/en_US/`
+- `skills/shared/agent-context-sync/README.md`
+- `skills/shared/agent-context-sync/STATUS.md`
+- `skills/shared/agent-context-sync/zh_CN/SKILL.md`
+- `skills/shared/agent-context-sync/en_US/SKILL.md`
+- `skills/shared/agent-context-sync/zh_CN/references/`
+- `skills/shared/agent-context-sync/en_US/references/`
+- `skills/shared/agent-context-sync/zh_CN/scripts/`
+- `skills/shared/agent-context-sync/en_US/scripts/`
+- `examples/shared/agent-context-sync/zh_CN/`
+- `examples/shared/agent-context-sync/en_US/`
 
 ## Not Checked / Assumptions
 
-- No real target-tool import or invocation was run.
+- TRAE, Claude, and Cursor environments were not trialed.
 - Screenshots were not checked because no screenshot files are committed in the current sample.

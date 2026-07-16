@@ -1,6 +1,6 @@
 # Worktree Conductor 示例输出
 
-说明：这是脱敏示例，用于展示 Skill 的目标输出形态。真实试跑当前已实现包后，应保存目标工具的实际输出和公开安全证据。
+说明：这是脱敏示例，用于展示 Skill 的目标输出形态。当前双语真实试跑证据见同目录的 `real-trial-output.md`。
 
 ````markdown
 # Worktree Conductor Plan

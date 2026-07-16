@@ -2,11 +2,11 @@
 
 ## Current Stage
 
-Trial-validated.
+Ready.
 
 Both `zh_CN` and `en_US` import roots were independently loaded and run in Codex on 2026-07-16. Each trial executed the locale-local deterministic validator and completed manual locale-parity, evidence, link, and public-safety review. The records are public-safe and registered in `catalog/skills.yaml`.
 
-This status validates the current shared package in one real agent environment. It does not claim that TRAE or Claude has been tested, and it is not yet a `ready` release claim.
+The final maintainer release review passed on 2026-07-16. This status releases the current canonical shared package; it does not claim that TRAE- or Claude-specific variants have been tested.
 
 ## Completed
 
@@ -19,6 +19,7 @@ This status validates the current shared package in one real agent environment. 
 - Real Codex trial for `zh_CN`.
 - Real Codex trial for `en_US`.
 - Public-safety and behavioral-parity review of both trial records.
+- Final maintainer release review.
 
 ## Trial Evidence
 
@@ -35,11 +36,15 @@ The session's underlying model/service build was not exposed. Each evidence file
 - Trial metadata completeness, semantics, authenticity, nuanced public safety, screenshots, and behavioral locale parity remain manual review responsibilities.
 - A shared package needs a qualifying real-agent trial, not a trial in every planned tool under `target_tools`.
 
-## Still Needed For Ready
+## Final Release Review
 
-- Final maintainer release review and an explicit `ready` decision.
-- Optional TRAE or Claude trials if tool-specific confidence is desired.
-- Optional redacted screenshots; screenshots are not required for `trial-validated`.
+- Both locale-local strict validator runs passed with 0 errors and 0 warnings.
+- The two validator copies remained byte-identical.
+- All 24 standard-library regression tests passed.
+- Catalog paths, runtime references, relative links, bilingual behavior, trial metadata, and public-safety boundaries were reviewed.
+- No blocking pending evidence remains for the shared-package release claim.
+
+Optional future work includes TRAE or Claude trials for tool-specific confidence and redacted screenshots for publication material.
 
 ## Release Readiness
 
@@ -54,4 +59,4 @@ The session's underlying model/service build was not exposed. Each evidence file
 | Regression tests | 24 passing in the recorded local run |
 | Linux/Windows CI definition | Done |
 | Public safety boundary | Done |
-| Final ready review | Pending |
+| Final ready review | Done |

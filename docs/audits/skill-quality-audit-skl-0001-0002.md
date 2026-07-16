@@ -4,6 +4,8 @@ Audit date: 2026-07-03
 Auditor: SKL-0003 `skill-quality-auditor` procedure, applied manually in this repository
 Scope: SKL-0001 `solo-project-publisher` and SKL-0002 `worktree-conductor`
 
+Historical note: this is a point-in-time audit from 2026-07-03. SKL-0002 later gained bilingual Codex trial evidence and was promoted to `trial-validated`; use `catalog/skills.yaml` and the package `STATUS.md` for current status.
+
 ## Verdict
 
 Overall verdict: PASS WITH WARNINGS

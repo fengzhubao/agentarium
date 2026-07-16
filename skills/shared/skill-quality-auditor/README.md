@@ -44,8 +44,8 @@ To stay dependency-free, the catalog reader supports the YAML subset used by sch
 
 ## Current Status
 
-Trial-validated.
+Ready.
 
-Both locale import roots were independently run in Codex on 2026-07-16 with public-safe evidence, strict deterministic validation, and manual parity, evidence, link, and safety review. This validates the shared package in a real agent environment; it does not claim TRAE or Claude execution and does not yet mark the package `ready`.
+Both locale import roots were independently run in Codex on 2026-07-16 with public-safe evidence, strict deterministic validation, and manual parity, evidence, link, and safety review. A final maintainer release review confirmed the bilingual package, links, evidence, safety boundary, regression tests, and cross-platform CI. This release claim applies to the canonical shared package; it does not claim TRAE- or Claude-specific execution.
 
 See `STATUS.md` for readiness details.
