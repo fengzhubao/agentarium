@@ -5,7 +5,8 @@
 需要：
 
 - 唯一 `id`。
-- `slug`、`title`、scope、summary、tags。
+- `slug`、`title`、scope、`summary_zh`、`summary_en`、tags。
+- `model_fit` mapping，包含非空的 `suitable_for` 与 `not_suitable_for` 能力说明列表。
 - 非空 `target_tools`。
 - 不要求文件路径存在。
 

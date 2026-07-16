@@ -53,7 +53,7 @@ Required evidence:
 
 - Unique `id` matching `^SKL-[0-9]{4}$`.
 - `slug`, `title`, `scope`, summaries, and tags.
-- `model_fit` or equivalent agent/model capability notes.
+- A `model_fit` mapping with non-empty `suitable_for` and `not_suitable_for` capability-note lists.
 - Non-empty `target_tools`.
 - No package paths are required.
 

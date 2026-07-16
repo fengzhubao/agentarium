@@ -14,7 +14,7 @@ For agent-facing repository instructions, read `AGENTS.md` first. For the machin
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | SKL-0001 | `trae` | `trae` | SOLO Project Publisher | shared | `zh_CN`, `en_US` | `zh_CN` trial validated, `en_US` draft | Turn real project evidence into a publishable community post or project report. |
 | SKL-0002 | `shared` | `trae`, `codex`, `claude` | Worktree Conductor | shared | `zh_CN`, `en_US` | Sampled | Plan safe parallel development across Git worktrees, branches, file ownership boundaries, and integration order. |
-| SKL-0003 | `shared` | `trae`, `codex`, `claude` | Skill Quality Auditor | shared | `zh_CN`, `en_US` | Sampled | Audit Skill package quality, catalog alignment, locale parity, evidence, links, and public-safety risk. |
+| SKL-0003 | `shared` | `trae`, `codex`, `claude` | Skill Quality Auditor | shared | `zh_CN`, `en_US` | Trial-validated | Audit Skill package quality, catalog alignment, locale parity, evidence, links, and public-safety risk. Includes an independently importable deterministic validator in both locales. |
 
 Planned and candidate Skills are tracked in `catalog/skills.yaml`.
 

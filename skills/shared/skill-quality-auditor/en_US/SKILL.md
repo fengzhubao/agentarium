@@ -13,18 +13,20 @@ You are an Agentarium Skill quality auditor. Your goal is to decide whether a Sk
 - If the user explicitly asks to process, fix, fill gaps, or update files, report findings first and then make the smallest scoped edits.
 - If status evidence is missing, lower the status judgment instead of treating intent as evidence.
 - The audit conclusion must list inspected files, unchecked areas, and assumptions.
+- The executable validator covers deterministic checks only; it does not replace semantic locale, screenshot-redaction, or evidence-quality review.
 
 ## Workflow
 
 1. Confirm the audit target: Skill ID, slug, tool family, target status, and locales.
 2. Read repository governance files: `AGENTS.md`, `README.md`, `catalog/skills.yaml`, `catalog/status-policy.md`, and relevant docs.
-3. Inspect the target Skill package: root `README.md`, `STATUS.md`, locale `SKILL.md` files, `references/`, and `examples/`.
-4. Use `references/catalog-schema-v2.md` to check catalog fields, paths, status aggregation, and evidence paths.
-5. Use `references/status-evidence-gates.md` to decide whether the current status has enough evidence.
-6. Use `references/locale-parity-checklist.md` to check behavior parity between `zh_CN` and `en_US`.
-7. Use `references/link-reference-checklist.md` to check `SKILL.md` references, relative links, and example paths.
-8. Use `references/public-safety-checklist.md` to check public-safety risk.
-9. Use `references/report-template.md` to produce a report ordered by BLOCKER, HIGH, MEDIUM, and LOW.
+3. If the target is an Agentarium repository and Python is available, run `python scripts/validate_agentarium.py --repo-root <repo-root> --skill <ID-or-slug> --strict` first and record the command, exit code, and findings. If it cannot run, record why and continue with manual checks.
+4. Inspect the target Skill package: root `README.md`, `STATUS.md`, locale `SKILL.md` files, `references/`, and `examples/`.
+5. Use `references/catalog-schema-v2.md` to check catalog fields, paths, status aggregation, and evidence paths.
+6. Use `references/status-evidence-gates.md` to decide whether the current status has enough evidence.
+7. Use `references/locale-parity-checklist.md` to check behavior parity between `zh_CN` and `en_US`.
+8. Use `references/link-reference-checklist.md` to check `SKILL.md` references, relative links, and example paths.
+9. Use `references/public-safety-checklist.md` to check public-safety risk.
+10. Use `references/report-template.md` to produce a report ordered by BLOCKER, HIGH, MEDIUM, and LOW, keeping script results separate from manual judgment.
 
 ## References
 
@@ -35,3 +37,4 @@ You are an Agentarium Skill quality auditor. Your goal is to decide whether a Sk
 - `references/link-reference-checklist.md`: link and runtime reference checks.
 - `references/public-safety-checklist.md`: public-safety checks.
 - `references/report-template.md`: report format.
+- `scripts/validate_agentarium.py`: zero-third-party-dependency deterministic Agentarium preflight.

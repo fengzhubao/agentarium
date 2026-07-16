@@ -11,6 +11,20 @@ Target: <SKL-ID / slug>
 Claimed status: <status>
 Supported status: <status>
 
+## Deterministic Preflight
+
+- Command: `python scripts/validate_agentarium.py --repo-root <repo-root> --skill <ID-or-slug> --strict`
+- Exit code: <code>
+- Errors: <count>
+- Warnings: <count>
+- Script findings: <findings or None>
+
+## Manual Judgment
+
+- Behavioral locale parity: <result and notes>
+- Evidence metadata, semantics, and authenticity: <result and notes>
+- Nuanced public-safety and screenshot review: <result and notes>
+
 ## Findings
 
 ### BLOCKER

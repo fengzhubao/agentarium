@@ -25,6 +25,10 @@
 - ID 不应编码工具族，例如不要使用 `TRAE-0001`。
 - `status` 必须来自 `catalog/status-policy.md`。
 - 顶层状态必须不高于所有已实现 variant 的保守聚合状态。
+- `title`、`category`、`summary_zh` 和 `summary_en` 必须是非空字符串。
+- `scope` 必须为 `shared` 或 `tool-specific`。
+- `tags`、`target_tools` 和非空的 `supported_tools` 必须由唯一的非空字符串组成。
+- 工具值必须已在 catalog 的 `tool_families` 中声明。
 
 ## 包与工具字段
 
@@ -35,7 +39,7 @@
 
 ## Agent 与模型适配
 
-- `model_fit` 应描述能力要求，不要承诺适配某个会变化的模型品牌或版本。
+- `model_fit` 是包含非空 `suitable_for` 与 `not_suitable_for` 字符串列表的 mapping。这些列表描述能力要求，不要承诺适配某个会变化的模型品牌或版本。
 - 好的条目应说明所需能力，例如文件访问、仓库检查、命令/工具使用、代码推理、长上下文对比、安全审查、写作质量或公开安全判断。
 - 如果声称某个 Skill 已适配具体模型或 agent 版本，对应的 `STATUS.md` 或证据应记录这次试跑。
 

@@ -10,6 +10,20 @@ Supported status: `sampled`
 
 The current package structure, bilingual instructions, runtime references, and sample evidence support `sampled`. They do not support `trial-validated` yet because no real target-tool trial output or redacted trial note is present for the implemented package.
 
+## Deterministic Preflight
+
+- Command: `python scripts/validate_agentarium.py --repo-root <repo-root> --skill SKL-0002 --strict`
+- Exit code: `0`
+- Errors: `0`
+- Warnings: `0`
+- Script findings: None.
+
+## Manual Judgment
+
+- Behavioral locale parity: Pass; both locales align on workflow, command safety, and output structure.
+- Evidence metadata, semantics, and authenticity: Pass for `sampled`; bilingual samples exist, but real trial evidence is missing.
+- Nuanced public-safety and screenshot review: Pass; samples use placeholder paths, and no screenshots are committed.
+
 ## Findings
 
 ### BLOCKER
@@ -47,8 +61,15 @@ The current package structure, bilingual instructions, runtime references, and s
 
 ## Files Inspected
 
+- `AGENTS.md`
+- `README.md`
 - `catalog/skills.yaml`
 - `catalog/status-policy.md`
+- `docs/importing.md`
+- `docs/publishing.md`
+- `docs/localization.md`
+- `docs/safety.md`
+- `docs/skill-completeness.md`
 - `skills/shared/worktree-conductor/README.md`
 - `skills/shared/worktree-conductor/STATUS.md`
 - `skills/shared/worktree-conductor/zh_CN/SKILL.md`

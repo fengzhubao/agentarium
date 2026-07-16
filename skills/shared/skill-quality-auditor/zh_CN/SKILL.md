@@ -13,18 +13,20 @@ description: 当需要在发布、提级或合并前审计 Agentarium Skill 包�
 - 如果用户明确要求“处理”“修复”“补齐”或“更新”，先输出发现，再按最小范围修改。
 - 如果状态证据不足，降低状态判断，不要用意图替代证据。
 - 审计结论必须列出检查过的文件、未检查内容和假设。
+- 可执行校验器只覆盖确定性检查，不能代替双语语义、截图脱敏和证据质量判断。
 
 ## 工作流
 
 1. 确认审计对象：Skill ID、slug、工具族、目标状态、语言版本。
 2. 读取仓库治理文件：`AGENTS.md`、`README.md`、`catalog/skills.yaml`、`catalog/status-policy.md`，以及相关 docs。
-3. 检查目标 Skill 包：根 `README.md`、`STATUS.md`、各 locale 的 `SKILL.md`、`references/`、`examples/`。
-4. 按 `references/catalog-schema-v2.md` 检查目录字段、路径、状态聚合和证据路径。
-5. 按 `references/status-evidence-gates.md` 判断当前状态是否有足够证据。
-6. 按 `references/locale-parity-checklist.md` 检查 `zh_CN` 与 `en_US` 行为一致性。
-7. 按 `references/link-reference-checklist.md` 检查 `SKILL.md` 引用、相对链接和示例路径。
-8. 按 `references/public-safety-checklist.md` 检查公开安全风险。
-9. 使用 `references/report-template.md` 输出审计报告，按 BLOCKER、HIGH、MEDIUM、LOW 排序。
+3. 如果目标是 Agentarium 仓库且 Python 可用，先运行 `python scripts/validate_agentarium.py --repo-root <repo-root> --skill <ID-or-slug> --strict`，记录命令、退出码和发现；如果无法运行，明确记录原因并继续人工检查。
+4. 检查目标 Skill 包：根 `README.md`、`STATUS.md`、各 locale 的 `SKILL.md`、`references/`、`examples/`。
+5. 按 `references/catalog-schema-v2.md` 检查目录字段、路径、状态聚合和证据路径。
+6. 按 `references/status-evidence-gates.md` 判断当前状态是否有足够证据。
+7. 按 `references/locale-parity-checklist.md` 检查 `zh_CN` 与 `en_US` 行为一致性。
+8. 按 `references/link-reference-checklist.md` 检查 `SKILL.md` 引用、相对链接和示例路径。
+9. 按 `references/public-safety-checklist.md` 检查公开安全风险。
+10. 使用 `references/report-template.md` 输出审计报告，按 BLOCKER、HIGH、MEDIUM、LOW 排序，并把脚本结果与人工判断分开。
 
 ## 参考文件
 
@@ -35,3 +37,4 @@ description: 当需要在发布、提级或合并前审计 Agentarium Skill 包�
 - `references/link-reference-checklist.md`：链接和 runtime reference 检查。
 - `references/public-safety-checklist.md`：公开安全检查。
 - `references/report-template.md`：报告格式。
+- `scripts/validate_agentarium.py`：零第三方依赖的 Agentarium 确定性预检查。

@@ -30,10 +30,22 @@ It checks catalog schema alignment, import roots, bilingual behavior parity, ref
 - Finding missing references, examples, catalog paths, and public-safety issues.
 - Producing a concise merge-review report for Skill changes.
 
+## Deterministic Preflight
+
+Each locale is independently importable and includes the same zero-third-party-dependency validator. It requires Python 3.10 or newer. Run it from the selected locale root:
+
+```text
+python scripts/validate_agentarium.py --repo-root <repo-root> --skill <ID-or-slug> --strict
+```
+
+Omit `--skill` to validate the full catalog, or add `--format json` for machine-readable output. The preflight checks deterministic catalog, path, frontmatter, evidence-envelope, link, and high-confidence public-safety rules. It intentionally leaves behavioral locale parity, nuanced public-safety review, screenshots, and trial authenticity to an agent or human reviewer.
+
+To stay dependency-free, the catalog reader supports the YAML subset used by schema v2: block mappings and sequences, quoted or simple scalars, simple inline lists, and inline comments. Advanced YAML features such as anchors, tags, merge keys, and block scalars are outside its supported input. If the catalog adopts those features, update the reader or use a full YAML implementation before relying on automated results.
+
 ## Current Status
 
-Sampled.
+Trial-validated.
 
-The Skill has bilingual instructions, reference checklists, and public-safe sample input/output. It still needs real implemented-variant trial evidence before it can be marked `trial-validated`.
+Both locale import roots were independently run in Codex on 2026-07-16 with public-safe evidence, strict deterministic validation, and manual parity, evidence, link, and safety review. This validates the shared package in a real agent environment; it does not claim TRAE or Claude execution and does not yet mark the package `ready`.
 
 See `STATUS.md` for readiness details.

@@ -25,6 +25,10 @@ Each Skill entry in `catalog/skills.yaml` should include:
 - IDs must not encode the tool family; do not use IDs like `TRAE-0001`.
 - `status` must come from `catalog/status-policy.md`.
 - The top-level status must not be higher than the conservative aggregate of implemented variants.
+- `title`, `category`, `summary_zh`, and `summary_en` must be non-empty strings.
+- `scope` must be `shared` or `tool-specific`.
+- `tags`, `target_tools`, and non-empty `supported_tools` must contain unique, non-empty strings.
+- Tool values must be declared by catalog `tool_families`.
 
 ## Package And Tool Fields
 
@@ -35,7 +39,7 @@ Each Skill entry in `catalog/skills.yaml` should include:
 
 ## Agent And Model Fit
 
-- `model_fit` should describe capability requirements, not guaranteed compatibility with a changing model brand or version.
+- `model_fit` is a mapping with non-empty `suitable_for` and `not_suitable_for` string lists. These lists describe capability requirements, not guaranteed compatibility with a changing model brand or version.
 - Good entries mention required agent/model capabilities such as file access, repository inspection, command/tool use, code reasoning, long-context comparison, security review, writing quality, or public-safety judgment.
 - If a Skill is claimed to work with a specific model or agent version, the matching `STATUS.md` or evidence should record that trial.
 

@@ -1,0 +1,36 @@
+name: Validate Agentarium
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: ${{ matrix.os }} / Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: "3.10"
+          - os: ubuntu-latest
+            python: "3.12"
+          - os: windows-latest
+            python: "3.12"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Validate catalog and Skill packages
+        run: >-
+          python -S
+          skills/shared/skill-quality-auditor/en_US/scripts/validate_agentarium.py
+          --repo-root .
+          --strict
+      - name: Run validator tests
+        run: python -m unittest discover -s tests -v

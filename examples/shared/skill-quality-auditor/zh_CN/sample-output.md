@@ -10,6 +10,20 @@ Supported status: `sampled`
 
 当前文件结构、双语说明、runtime references 和样例证据支持 `sampled`。还不能支持 `trial-validated`，因为当前已实现包没有真实目标工具试运行输出或脱敏试运行记录。
 
+## Deterministic Preflight
+
+- Command: `python scripts/validate_agentarium.py --repo-root <repo-root> --skill SKL-0002 --strict`
+- Exit code: `0`
+- Errors: `0`
+- Warnings: `0`
+- Script findings: None.
+
+## Manual Judgment
+
+- Behavioral locale parity: Pass；双语工作流、命令安全和输出结构一致。
+- Evidence metadata, semantics, and authenticity: Pass for `sampled`；双语样例存在，但真实试运行证据缺失。
+- Nuanced public-safety and screenshot review: Pass；样例使用占位路径，且未提交截图。
+
 ## Findings
 
 ### BLOCKER
@@ -47,8 +61,15 @@ Supported status: `sampled`
 
 ## Files Inspected
 
+- `AGENTS.md`
+- `README.md`
 - `catalog/skills.yaml`
 - `catalog/status-policy.md`
+- `docs/importing.md`
+- `docs/publishing.md`
+- `docs/localization.md`
+- `docs/safety.md`
+- `docs/skill-completeness.md`
 - `skills/shared/worktree-conductor/README.md`
 - `skills/shared/worktree-conductor/STATUS.md`
 - `skills/shared/worktree-conductor/zh_CN/SKILL.md`

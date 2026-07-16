@@ -5,7 +5,8 @@
 Requires:
 
 - Unique `id`.
-- `slug`, `title`, scope, summaries, and tags.
+- `slug`, `title`, scope, `summary_zh`, `summary_en`, and tags.
+- A `model_fit` mapping with non-empty `suitable_for` and `not_suitable_for` capability-note lists.
 - Non-empty `target_tools`.
 - No package paths are required.
 

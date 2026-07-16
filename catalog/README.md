@@ -49,7 +49,7 @@ Do not use a parent package directory as an import root unless it directly conta
 | --- | --- | --- | --- | --- | --- | --- |
 | SKL-0001 | `solo-project-publisher` | shared | draft | trae | trae | Turn real project evidence into a publishable community post or report. `zh_CN` is trial-validated; `en_US` is draft. |
 | SKL-0002 | `worktree-conductor` | shared | sampled | trae, codex, claude | shared | Plan safe parallel development across Git worktrees and agents. Shared package is sampled; real target-agent trial evidence is pending. |
-| SKL-0003 | `skill-quality-auditor` | shared | sampled | trae, codex, claude | shared | Audit Skill package quality, safety, examples, and catalog alignment. Shared package is sampled; real target-agent trial evidence is pending. |
+| SKL-0003 | `skill-quality-auditor` | shared | trial-validated | trae, codex, claude | shared | Audit Skill package quality, safety, examples, and catalog alignment. Both locale packages have public-safe Codex trial records from 2026-07-16. |
 | SKL-0004 | `agent-context-sync` | shared | candidate | trae, claude, codex | none | Keep cross-agent instruction files aligned from a single source of truth. |
 | SKL-0005 | `ci-failure-triage` | shared | candidate | trae, claude, codex | none | Triage CI failures and produce minimal fix plans. |
 | SKL-0006 | `mcp-risk-review` | shared | candidate | trae, claude, codex | none | Review MCP server permissions, data exposure, and safety risks before adoption. |
