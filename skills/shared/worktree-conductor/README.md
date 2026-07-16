@@ -31,8 +31,8 @@ It helps a developer split a larger repository task into clear branches, worktre
 
 ## Current Status
 
-Trial-validated.
+Ready.
 
-Both locale import roots were run in Codex on 2026-07-16 against the real Agent Context Sync planning task. The trials detected the dirty base worktree, protected shared files, and produced behaviorally aligned plans without running mutating Git commands. This validates the canonical shared planning workflow in Codex; it does not claim TRAE- or Claude-specific execution.
+Both locale import roots were run in Codex on 2026-07-16 against the real Agent Context Sync planning task. The trials detected the dirty base worktree, protected shared files, and produced behaviorally aligned plans without running mutating Git commands. The resulting implementation followed the ownership and integration plan, and Linux/Windows CI passed before final maintainer release review. This release applies to the canonical shared workflow; it does not claim TRAE- or Claude-specific execution.
 
 See `STATUS.md` for readiness details.

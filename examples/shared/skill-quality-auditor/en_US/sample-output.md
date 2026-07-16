@@ -2,13 +2,13 @@
 
 ## Verdict
 
-PASS WITH WARNINGS
+PASS
 
 Target: SKL-0004 / `agent-context-sync`
-Claimed status: `trial-validated`
-Supported status: `trial-validated`
+Claimed status: `ready`
+Supported status: `ready`
 
-The package structure, bilingual instructions, configuration reference, byte-identical scripts, samples, and bilingual Codex trials support `trial-validated`. A final `ready` claim still requires complete CI and maintainer release review.
+The package structure, bilingual instructions, configuration reference, byte-identical scripts, samples, bilingual Codex trials, cross-platform CI, and final maintainer review support `ready`.
 
 ## Deterministic Preflight
 
@@ -21,7 +21,7 @@ The package structure, bilingual instructions, configuration reference, byte-ide
 ## Manual Judgment
 
 - Behavioral locale parity: Pass; both locales align on triggers, check/diff/sync authority, configuration, and output structure.
-- Evidence metadata, semantics, and authenticity: Pass for `trial-validated`; both real trial records contain required fields and point to the current script version.
+- Evidence metadata, semantics, and authenticity: Pass for `ready`; both real trial records contain required fields and point to the current script version, with cross-platform CI and release review recorded.
 - Nuanced public-safety and screenshot review: Pass; samples and trials use placeholder paths, and no screenshots are committed.
 
 ## Findings
@@ -40,7 +40,7 @@ The package structure, bilingual instructions, configuration reference, byte-ide
 
 ### LOW
 
-- `skills/shared/agent-context-sync/STATUS.md`: Final `ready` review remains pending. Impact: this does not block `trial-validated`, but the package cannot claim final release completion yet. Fix: perform maintainer release review after cross-platform CI passes.
+- None.
 
 ## Check Matrices
 
@@ -50,13 +50,13 @@ The package structure, bilingual instructions, configuration reference, byte-ide
 | Package structure | pass | Root README/STATUS, bilingual `SKILL.md` files, config references, and scripts exist. |
 | Locale parity | pass | Both locales align on authority, CLI, markers, exit codes, and safety rules. |
 | References and links | pass | Config references and catalog evidence paths exist. |
-| Evidence gates | pass | Bilingual samples and real Codex trials support `trial-validated`. |
+| Evidence gates | pass | Bilingual samples, real Codex trials, cross-platform CI, and maintainer review support `ready`. |
 | Public safety | pass | Paths are redacted, and the script rejects sensitive filenames and repository escapes. |
 
 ## Required Next Actions
 
-- Keep the current status at `trial-validated` until cross-platform CI and final release review finish.
-- Re-run full strict validation and public-safety review before publication.
+- Keep deterministic validation, regression tests, and cross-platform CI active.
+- Re-run bilingual trials after changing the CLI, markers, or safety boundary.
 
 ## Files Inspected
 

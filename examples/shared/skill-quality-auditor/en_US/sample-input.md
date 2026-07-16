@@ -5,7 +5,7 @@ Use Skill Quality Auditor to audit SKL-0004 `agent-context-sync` in Agentarium.
 Goals:
 
 - Decide whether the catalog, README, STATUS, bilingual `SKILL.md` files, references, and examples support the current status.
-- The target status is `trial-validated`.
+- The target status is `ready`.
 - By default, only report findings and do not modify files.
 
 Audit scope:

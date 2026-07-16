@@ -2,9 +2,9 @@
 
 ## Current Stage
 
-Trial-validated.
+Ready.
 
-Both `zh_CN` and `en_US` import roots were loaded and run in Codex on 2026-07-16. Each trial executed the locale-local script against a public-safe temporary repository using `check`, `diff`, `sync`, and final `check`. The trials preserved unmanaged tool-specific content and ended with zero drift.
+Both `zh_CN` and `en_US` import roots were loaded and run in Codex on 2026-07-16. Each trial executed the locale-local script against a public-safe temporary repository using `check`, `diff`, `sync`, and final `check`. The trials preserved unmanaged tool-specific content and ended with zero drift. Cross-platform CI and final maintainer release review then passed.
 
 ## Completed
 
@@ -27,11 +27,17 @@ Both `zh_CN` and `en_US` import roots were loaded and run in Codex on 2026-07-16
 | `zh_CN` | Codex (`codex-cli 0.144.4`) | 2026-07-16 | `examples/shared/agent-context-sync/zh_CN/real-trial-output.md` | Pass; 3 drifted targets synchronized, final 0 drift |
 | `en_US` | Codex (`codex-cli 0.144.4`) | 2026-07-16 | `examples/shared/agent-context-sync/en_US/real-trial-output.md` | Pass; behavior aligned with zh_CN |
 
-## Still Needed For Ready
+## Final Release Review
 
-- Complete full repository CI with the new package and test suite.
-- Perform a final maintainer release review and explicit `ready` decision.
-- Optional trials in TRAE, Claude, or Cursor-oriented repositories for tool-specific confidence.
+- Both locale trial records contain the required public-safe metadata and final script SHA-256.
+- The two locale-local script copies are byte-identical.
+- All 18 Agent Context Sync tests passed as part of the 42-test repository suite.
+- CI passed on Ubuntu Python 3.10, Ubuntu Python 3.12, and Windows Python 3.12.
+- Full strict Agentarium validation passed with 0 errors and 0 warnings.
+- Configuration paths, markers, sensitive-file rejection, links, bilingual behavior, and public-safety boundaries passed review.
+- No blocking pending evidence remains for the shared-package release claim.
+
+Optional future work includes trials in TRAE, Claude, or Cursor-oriented repositories for tool-specific confidence.
 
 ## Release Readiness
 
@@ -45,4 +51,4 @@ Both `zh_CN` and `en_US` import roots were loaded and run in Codex on 2026-07-16
 | Regression tests | 18 passing in the recorded local run |
 | Real trial output | Done for both locales |
 | Public safety boundary | Done |
-| Final ready review | Pending |
+| Final ready review | Done |

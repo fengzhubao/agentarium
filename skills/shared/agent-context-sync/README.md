@@ -36,6 +36,6 @@ It uses a deterministic, zero-third-party-dependency Python script with three mo
 
 ## Current Status
 
-Trial-validated. Both locale import roots completed public-safe Codex trials on 2026-07-16 using the full `check → diff → sync → check` workflow. The trials preserved tool-specific content, updated existing managed blocks, appended missing blocks, and created missing targets. This validates the canonical shared package in Codex; it does not claim tool-specific TRAE, Claude, or Cursor execution.
+Ready. Both locale import roots completed public-safe Codex trials on 2026-07-16 using the full `check → diff → sync → check` workflow. The trials preserved tool-specific content, updated existing managed blocks, appended missing blocks, and created missing targets. Eighteen regression tests passed on Linux and Windows before final maintainer release review. This release applies to the canonical shared package; it does not claim tool-specific TRAE, Claude, or Cursor execution.
 
 See `STATUS.md` for readiness details.

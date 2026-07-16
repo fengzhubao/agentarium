@@ -2,13 +2,13 @@
 
 ## Verdict
 
-PASS WITH WARNINGS
+PASS
 
 Target: SKL-0004 / `agent-context-sync`
-Claimed status: `trial-validated`
-Supported status: `trial-validated`
+Claimed status: `ready`
+Supported status: `ready`
 
-当前文件结构、双语说明、配置 reference、字节一致的脚本、样例和双语 Codex 试运行证据支持 `trial-validated`。最终 `ready` 声明仍需完整 CI 和维护者发布复核。
+当前文件结构、双语说明、配置 reference、字节一致的脚本、样例、双语 Codex 试运行证据、跨平台 CI 和最终维护者复核支持 `ready`。
 
 ## Deterministic Preflight
 
@@ -21,7 +21,7 @@ Supported status: `trial-validated`
 ## Manual Judgment
 
 - Behavioral locale parity: Pass；双语触发、check/diff/sync 权限边界、配置和输出结构一致。
-- Evidence metadata, semantics, and authenticity: Pass for `trial-validated`；双语真实试运行记录包含必需字段并指向当前脚本版本。
+- Evidence metadata, semantics, and authenticity: Pass for `ready`；双语真实试运行记录包含必需字段并指向当前脚本版本，跨平台 CI 和发布复核已记录。
 - Nuanced public-safety and screenshot review: Pass；样例和试运行使用占位路径，且未提交截图。
 
 ## Findings
@@ -40,7 +40,7 @@ Supported status: `trial-validated`
 
 ### LOW
 
-- `skills/shared/agent-context-sync/STATUS.md`: 最终 `ready` 复核仍待完成。Impact: 不阻断 `trial-validated`，但当前不能声明正式发布完成。Fix: 等跨平台 CI 通过后执行维护者发布复核。
+- None.
 
 ## Check Matrices
 
@@ -50,13 +50,13 @@ Supported status: `trial-validated`
 | Package structure | pass | 根 README/STATUS、双语 `SKILL.md`、配置 reference 和脚本存在。 |
 | Locale parity | pass | 中英文版本覆盖相同权限边界、CLI、marker、退出码和安全规则。 |
 | References and links | pass | `SKILL.md` 引用的配置 reference 和 catalog evidence 均存在。 |
-| Evidence gates | pass | 双语样例和真实 Codex 试运行支持 `trial-validated`。 |
+| Evidence gates | pass | 双语样例、真实 Codex 试运行、跨平台 CI 和维护者复核支持 `ready`。 |
 | Public safety | pass | 路径已脱敏，脚本拒绝敏感文件名和仓库外路径。 |
 
 ## Required Next Actions
 
-- 保持当前状态为 `trial-validated`，直到跨平台 CI 和最终发布复核完成。
-- 发布前重新运行全量严格校验和公开安全检查。
+- 保持自动校验、回归测试和跨平台 CI。
+- 变更 CLI、marker 或安全边界后重新执行双语试运行。
 
 ## Files Inspected
 

@@ -5,7 +5,7 @@
 目标：
 
 - 判断 catalog、README、STATUS、双语 `SKILL.md`、references 和 examples 是否支持当前状态。
-- 当前目标状态是 `trial-validated`。
+- 当前目标状态是 `ready`。
 - 默认只输出审计报告，不修改文件。
 
 审计范围：

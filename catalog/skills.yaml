@@ -74,8 +74,8 @@ skills:
     title: Worktree Conductor
     category: development
     scope: shared
-    status: trial-validated
-    status_note: "Both locale packages were run in Codex on 2026-07-16 against the real SKL-0004 planning task with public-safe trial records."
+    status: ready
+    status_note: "Bilingual Codex trials, SKL-0004 implementation follow-through, and Linux/Windows CI passed; final maintainer release review completed on 2026-07-16."
     summary_zh: "规划多 agent 或多人协作下的 Git worktree 并行开发。"
     summary_en: "Plans safe parallel development across Git worktrees, branches, and agents."
     model_fit:
@@ -96,8 +96,8 @@ skills:
       - en_US
     variants:
       - tool: shared
-        status: trial-validated
-        status_note: "Both locale packages have public-safe Codex trial records for the real SKL-0004 planning task from 2026-07-16."
+        status: ready
+        status_note: "The shared variant passed bilingual trials, implementation follow-through, cross-platform CI, and final maintainer release review."
         package_root: skills/shared/worktree-conductor
         readme_file: skills/shared/worktree-conductor/README.md
         status_file: skills/shared/worktree-conductor/STATUS.md
@@ -188,8 +188,8 @@ skills:
     title: Agent Context Sync
     category: context
     scope: shared
-    status: trial-validated
-    status_note: "Both locale packages completed public-safe Codex check/diff/sync trials on 2026-07-16."
+    status: ready
+    status_note: "Both locale packages completed public-safe Codex trials, 18 regression tests, Linux/Windows CI, and final maintainer release review on 2026-07-16."
     summary_zh: "同步 AGENTS.md、CLAUDE.md、Codex instructions、Cursor rules 等跨 agent 上下文。"
     summary_en: "Keeps AGENTS.md, CLAUDE.md, Codex instructions, Cursor rules, and other agent context files aligned."
     model_fit:
@@ -209,8 +209,8 @@ skills:
       - en_US
     variants:
       - tool: shared
-        status: trial-validated
-        status_note: "Both required locales completed public-safe Codex trials using the locale-local deterministic script."
+        status: ready
+        status_note: "The shared variant passed bilingual Codex trials, 18 regression tests, cross-platform CI, and final maintainer release review."
         package_root: skills/shared/agent-context-sync
         readme_file: skills/shared/agent-context-sync/README.md
         status_file: skills/shared/agent-context-sync/STATUS.md

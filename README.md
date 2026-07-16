@@ -13,9 +13,9 @@ For agent-facing repository instructions, read `AGENTS.md` first. For the machin
 | ID | Implemented Package(s) | Target Tools | Skill | Scope | Languages | Status | Purpose |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | SKL-0001 | `trae` | `trae` | SOLO Project Publisher | shared | `zh_CN`, `en_US` | `zh_CN` trial validated, `en_US` draft | Turn real project evidence into a publishable community post or project report. |
-| SKL-0002 | `shared` | `trae`, `codex`, `claude` | Worktree Conductor | shared | `zh_CN`, `en_US` | Trial-validated | Plan safe parallel development across Git worktrees, branches, file ownership boundaries, and integration order. |
+| SKL-0002 | `shared` | `trae`, `codex`, `claude` | Worktree Conductor | shared | `zh_CN`, `en_US` | Ready | Plan safe parallel development across Git worktrees, branches, file ownership boundaries, and integration order. |
 | SKL-0003 | `shared` | `trae`, `codex`, `claude` | Skill Quality Auditor | shared | `zh_CN`, `en_US` | Ready | Audit Skill package quality, catalog alignment, locale parity, evidence, links, and public-safety risk. Includes an independently importable deterministic validator in both locales. |
-| SKL-0004 | `shared` | `trae`, `codex`, `claude` | Agent Context Sync | shared | `zh_CN`, `en_US` | Trial-validated | Check, diff, and synchronize one shared rule source across agent instruction files without overwriting tool-specific content. |
+| SKL-0004 | `shared` | `trae`, `codex`, `claude` | Agent Context Sync | shared | `zh_CN`, `en_US` | Ready | Check, diff, and synchronize one shared rule source across agent instruction files without overwriting tool-specific content. |
 
 Planned and candidate Skills are tracked in `catalog/skills.yaml`.
 
