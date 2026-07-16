@@ -36,13 +36,13 @@ catalog_skills: 6
 selected_skills: 1
 variants: 1
 locales: 2
-markdown_files: 22
-safety_files: 24
+markdown_files: 24
+safety_files: 26
 ```
 
 - Exit code: `0`
 - Script findings: None.
-- Validator SHA-256: `15083A258BD2C120F8B9E00E0E917A493A832724D08AB82574C7E43D9594F36D`; both locale copies were byte-identical.
+- Validator SHA-256: `795D18951436C37ECDAEAE9B48D61705DBB8438E02ECD245545981A85C208D4A`; both locale copies were byte-identical.
 - Supplemental validator suite: 24 tests passed.
 
 ## Manual Judgment

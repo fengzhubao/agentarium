@@ -669,6 +669,7 @@ def _markdown_without_code(text: str) -> str:
 def _check_markdown_links(
     repo_root: Path, files: Iterable[Path], findings: list[Finding]
 ) -> None:
+    repo_root = repo_root.resolve()
     for markdown in files:
         source = _relative(repo_root, markdown)
         try:
